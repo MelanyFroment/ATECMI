@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %} 
+
+{% block title %}Accueil - ATECMI{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <video autoplay muted loop class="bg-video">
+        <source src="{% static 'video/accueil2.mp4' %}" type="video/mp4">
+    </video>
+    <section  class="hero-content">
+        <h1>Concepteur et</br> fabricant de vos </br>solutions sur mesure</h1>
+        <p>Depuis 1978, Atecmi conçoit vos chaînes complètes de conditionnement</p>
+        <div class="hero-buttons">
+            <button class="cta">Nos solutions</button>
+            <button class="cta2">Demander une étude</button>
+        </div>
+    </section>
+</section>
+
+
+<section class="features">
+    <h2 class="text-center">Ils nous font <strong>confiance</strong></h2>
+    <div class="cards">
+        <div class="card"><img src="/static/images/accueil/serac.png" alt="Logo 1"></div>
+        <div class="card"><img src="/static/images/accueil/castel since 1949.png" alt="Logo 2"></div>
+        <div class="card"><img src="/static/images/accueil/candia.png" alt="Logo 3"></div>
+        <div class="card"><img src="/static/images/accueil/bonduelle.png" alt="Logo 4"></div>
+        <div class="card"><img src="/static/images/accueil/eclor.png" alt="Logo 5"></div>
+    </div>
+</section>
+
+<section class="solutions">
+    <h2 class="text-center">Nos <strong>solutions</strong></h2>
+
+    <div class="solutions-row">
+        <div class="solution-item">
+            <img src="/static/images/accueil/modelisation_depalettisation.png" alt="">
+            <p>Dépalettisation</p>
+        </div>
+
+        <div class="solution-item">
+            <img src="/static/images/accueil/Photo_convoyage_produit_unitaire.jpg" alt="">
+            <p>Convoyage produit unitaire</p>
+        </div>
+
+        <div class="solution-item">
+            <img src="/static/images/accueil/modelisation_encartonnage.png" alt="">
+            <p>Encartonnage</p>
+        </div>
+
+        <div class="solution-item">
+            <img src="/static/images/accueil/photo_convoyage_colis.JPG" alt="">
+            <p>Convoyage colis</p>
+        </div>
+
+        <div class="solution-item">
+            <img src="/static/images/accueil/modelisation_palettisation.png" alt="">
+            <p>Palettisation</p>
+        </div>
+
+        <div class="solution-item">
+            <img src="/static/images/accueil/Photo_integration.JPG" alt="">
+            <p>Intégration</p>
+        </div>
+
+        <div class="solution-item">
+            <img src="/static/images/accueil/Photo_Convoyage_palettes .JPG" alt="">
+            <p>Convoyage palette</p>
+        </div>
+
+        <div class="solution-item">
+            <img src="/static/images/accueil/Photo_solutions_robotisees.jpg" alt="">
+            <p>Solutions robotisées</p>
+        </div>
+    </div>
+</section>
+
+<section class="highlight">
+    <div class="overlay"></div>
+
+    <div class="highlight-content">
+        <div class="highlight-item">
+            <h3>45 <strong>+</strong></h3>
+            <p>ans d’expérience</p>
+        </div>
+
+        <div class="highlight-item">
+            <h3>250 <strong>+</strong></h3>
+            <p>clients industriels</p>
+        </div>
+
+        <div class="highlight-item">
+            <h3>40 <strong>+</strong></h3>
+            <p>collaborateurs</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

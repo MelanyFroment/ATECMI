@@ -1,0 +1,26 @@
+{% load static %} 
+
+<nav class="navbar">
+    <div class="nav-container">
+
+        <a href="/" class="logo-container">
+            <img src="/static/images/logo.png" alt="Logo" class="logo">
+        </a>
+
+        <div class="nav-menu" id="navMenu">
+            <ul class="nav-left">
+                <li><a href="{% url 'about' %}">À propos</a></li>
+                <li><a href="#">Solutions</a></li>
+                <li><a href="#">Expertises</a></li>
+                <li><a href="#">Actualités</a></li>
+            </ul>
+
+            <ul class="nav-right">
+                <li class="cta"><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="burger" id="burger">☰</div>
+
+    </div>
+</nav>
