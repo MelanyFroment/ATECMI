@@ -1,0 +1,115 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Dépalettisation - ATECMI{% endblock %}
+
+{% block content %}
+<section class="hero-depalettisation">
+    <img src="{% static 'images/depalettisation/Photo_haut_page_depal.jpg' %}" alt="Dépalettisation" class="hero-img">
+    <div class="hero-content">
+        <h1>Dépalettisation : <br/> Fiabilité et cadence,<br/> dès la première opération </h1>
+        <p>ATECMI développe des systèmes de dépalettisation automatisés <br/>sur-mesure, pensés pour sécuriser vos flux et optimiser <br/>vos cadences dès l’entrée de ligne.</p>
+    </div>
+</section>
+
+<section class="features-depalettisation">
+    <h2 class="text-center">Dépalettisation industrielle <strong>sur-mesure</strong></h2>
+    <div class="features-grid">
+        <div class="feature-text">
+            <h4>Dépalettisation automatique et semi-automatique pour lignes industrielles</h4>
+            <p>ATECMI conçoit et intègre des solutions de <strong>dépalettisation industrielle automatiques ou semi-automatiques</strong>, en poste simple ou double poste, adaptées aux exigences de cadence des industries agroalimentaires.</p>
+            <p>Acteur reconnu dans le domaine de la dépalettisation automatisée, ATECMI accompagne ses clients dans l’optimisation des flux dès l’entrée de ligne de production.</p>
+        </div>
+
+        <div class="feature-image">
+            <img src="{% static 'images/accueil/modelisation_depalettisation.png' %}" alt="Dépalettisation">
+        </div>
+    </div>
+</section>
+
+<section class="features-video">
+    <video autoplay muted loop class="bg-video">
+        <source src="{% static 'video/accueil2.mp4' %}" type="video/mp4">
+    </video>
+</section>
+
+<section class="features-cascade">
+    <div class="cascade-row">
+        <div class="cascade-col text-col">
+            <h3>Des solutions adaptées à vos contraintes industrielles</h3>
+            <p>Chaque projet de dépalettisation est étudié selon :</p>
+            <ul>
+                <li>La nature et la matière des produits</li>
+                <li>Leur conditionnement et leur présentation sur palette</li>
+                <li>Les cadences à atteindre</li>
+                <li>L’environnement industriel (agroalimentaire, humidité, hygiène, etc.)</li>
+            </ul>
+            <p>En fonction de ces paramètres, ATECMI recommande le principe de mécanisation le plus performant pour garantir fiabilité, sécurité et continuité de production.</p>
+        </div>
+        <div class="cascade-col img-col">
+            <img src="{% static 'images/depalettisation/Photo_1_page depal.JPG' %}" alt="Image 1">
+        </div>
+    </div>
+    <div class="cascade-row">
+        <div class="cascade-col img-col">
+            <img src="{% static 'images/depalettisation/Photo_2_page depal.JPG' %}" alt="Image 2">
+        </div>
+        <div class="cascade-col text-col">
+            <h3>Nos technologies de dépalettisation</h3>
+            <p class="sousligne">Dépalettisation par préhension</p>
+            <p>La dépalettisation par préhension permet une manipulation précise et sécurisée des produits. <br/> Systèmes disponibles :</p>
+            <ul>
+                <li>Serrage pneumatique par vérins gonflables</li>
+                <li>Pinces à prise positive</li>
+                <li>Préhension adaptée aux formats spécifiques</li>
+            </ul>
+            <p>Avantages :</p>
+            <ul>
+                <li>Grande précision</li>
+                <li>Adaptation multi-formats</li>
+                <li>Protection optimale des produits</li>
+            </ul>
+        </div>
+    </div>
+    <div class="cascade-row">
+        <div class="cascade-col text-col">
+            <p class="sousligne">Dépalettisation par poussée ou transfert de couches</p>
+            <p>Le concept par poussée ou transfert de couches est particulièrement adapté aux lignes à forte cadence.</p>
+            <p>Configurations possibles :</p>
+            <ul>
+                <li>Sortie basse à niveau constant</li>
+                <li>Sortie haute avec puits de guidage sur 4 faces</li>
+            </ul>
+            <p>Cette technologie garantit :</p>
+            <ul>
+                <li>Stabilité des produits</li>
+                <li>Cadence élevée</li>
+                <li>Fiabilité mécanique</li>
+            </ul>
+            <p class="sousligne">Dépalettisation par plateau magnétique</p>
+            <p>Pour les produits métalliques (boîtes de conserve, emballages ferreux), ATECMI propose une solution par plateau magnétique.</p>
+            <p>Bénéfices :</p>
+            <ul>
+                <li>Manipulation rapide et sécurisée</li>
+                <li>Maintien optimal des charges</li>
+                <li>Productivité accrue</li>
+            </ul>
+        </div>
+        <div class="cascade-col img-col">
+            <img src="{% static 'images/depalettisation/Photo_3_page_depal.jpg' %}" alt="Image 3">
+        </div>
+    </div>
+</section>
+
+<section class="about-conclusion">
+    <h2>Pourquoi choisir ATECMI pour votre solution de dépalettisation ?</h2>
+    <ul>
+        <li>Expertise reconnue en automatisation industrielle</li>
+        <li>Solutions sur-mesure adaptées aux cadences élevées</li>
+        <li>Intégration complète dans vos lignes de production</li>
+        <li>Optimisation des flux dès l’entrée de ligne</li>
+        <li>Accompagnement de l’étude à la mise en service</li>
+    </ul>
+    <a class="cta" href="#">Demander une étude</a>
+</section>
+{% endblock %}

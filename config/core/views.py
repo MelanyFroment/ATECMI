@@ -8,3 +8,9 @@ def about(request):
 
 def contact(request):
     return render(request, "core/contact.html")
+
+def depalettisation(request):
+    return render(request, 'core/depalettisation.html')
+
+def paletisation(request):
+    return render(request, 'core/paletisation.html')
