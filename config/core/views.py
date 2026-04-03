@@ -12,5 +12,5 @@ def contact(request):
 def depalettisation(request):
     return render(request, 'core/depalettisation.html')
 
-def paletisation(request):
-    return render(request, 'core/paletisation.html')
+def palettisation(request):
+    return render(request, 'core/palettisation.html')
