@@ -27,6 +27,8 @@ SECRET_KEY = 'django-insecure-ktv_62d2#q22jt)2llosw4t*3*mwy+^!##b&3id@(d%_uq(z$l
 DEBUG = False
 
 ALLOWED_HOSTS = ["atecmi.onrender.com"]
+
+#add
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
  
 
