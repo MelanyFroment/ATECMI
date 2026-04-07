@@ -4,7 +4,7 @@ body {font-family: 'Montserrat';margin: 0;padding: 0;}
 .cta2 {background: #0e2643;padding: 1rem 2rem;border: none;color: #fff;cursor: pointer;font-weight: 900;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
 .cards { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; }
 
-/* VIDEO */
+/* VIDEO **/
 .bg-video {position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: unset;z-index: 0;}
 
 /* NAVBAR */
