@@ -4,9 +4,6 @@ body {font-family: 'Montserrat';margin: 0;padding: 0;}
 .cta2 {background: #0e2643;padding: 1rem 2rem;border: none;color: #fff;cursor: pointer;font-weight: 900;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
 .cards { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; }
 
-/* VIDEO **/
-.bg-video {position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: unset;z-index: 0;}
-
 /* NAVBAR */
 .navbar {position: absolute;top: 0;width: 100%;z-index: 10;background: #0f2745cf;display: flex;justify-content: space-around;align-items: center;}
 .navbar a {color: white;text-decoration: none;font-weight: 700;}
@@ -609,3 +606,8 @@ section {position: relative;z-index: 1;}
         padding: 60px 40px;
     }  
 }
+
+
+
+/* VIDEO **/
+.bg-video {position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: unset;z-index: 0;}
