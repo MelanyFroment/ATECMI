@@ -1,16 +1,12 @@
 body {font-family: 'Montserrat';margin: 0;padding: 0;}
 .footer { background: #222; color: #fff; text-align: center; padding: 1rem; }
-.cta { background: #f2c94c;color: #0e2643;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; padding: 1rem 2rem; border: none; cursor: pointer;font-weight: 900;}
+.cta { text-decoration: none; background: #f2c94c;color: #0e2643;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; padding: 1rem 2rem; border: none; cursor: pointer;font-weight: 900;}
 .cta2 {background: #0e2643;padding: 1rem 2rem;border: none;color: #fff;cursor: pointer;font-weight: 900;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
 .cards { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; }
-
-/* VIDEO **/
-.bg-video {position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: unset;z-index: 0;}
 
 /* NAVBAR */
 .navbar {position: absolute;top: 0;width: 100%;z-index: 10;background: #0f2745cf;display: flex;justify-content: space-around;align-items: center;}
 .navbar a {color: white;text-decoration: none;font-weight: 700;}
-.navbar ul {display: flex;align-items: center;gap: 50px;list-style: none;margin: 0;padding: 0;}
 .navbar li.contact{background-color: #f2c94c;padding: 10px;}
 .navbar li.cta a{color: #000;font-weight: bold;}
 .nav-container {display: flex;justify-content: space-between;align-items: center;}
@@ -22,8 +18,25 @@ body {font-family: 'Montserrat';margin: 0;padding: 0;}
 .cta a {background: #f2c94c;color: black;padding: 10px 20p;border-radius: 5px;}
 .nav-menu .cta {background: #f2c94c;color: black;border-radius: 2px;}
 
-/* Navbar sticky / scroll animation */
+/* DROPDOWN */
+.dropdown {position: relative;}
+.dropdown-menu {display: none;position: absolute;top: 100%;left: 0;background: #0e2643;list-style: none;padding: 10px 0;min-width: 240px;width: 100%;z-index: 100;}
+.dropdown-menu li {padding: 5px 20px;}
+.dropdown-menu li a {color: white;text-decoration: none;}
+.dropdown.active .dropdown-menu {display: block;}
+
+/* MOBILE */
+@media (max-width: 1024px) {
+    .dropdown-menu {
+        position: static;
+        background: transparent;
+        padding-left: 20px;
+    }
+}
+
 .navbar.sticky {position: fixed;top: 0;width: 100%;background: #0f2745ee;box-shadow: 0 4px 8px rgba(0,0,0,0.2);animation: slideDown 0.3s ease-in-out;transition: background 0.3s, box-shadow 0.3s;}
+
+.bg-video {position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: unset;z-index: 0;}
 
 @keyframes slideDown {0% { transform: translateY(-100%); opacity: 0; }100% { transform: translateY(0); opacity: 1; }}
 
@@ -42,7 +55,7 @@ body {font-family: 'Montserrat';margin: 0;padding: 0;}
     .nav-menu {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 115px;
         left: 0;
         width: 100%;
         background: #0f2745cf;
@@ -51,10 +64,9 @@ body {font-family: 'Montserrat';margin: 0;padding: 0;}
         padding: 20px 0;
         gap: 20px;
     }
-    .navbar ul {
-        display: flex;
+        .navbar ul {
         align-items: start;
-        gap: 31px;
+        gap: 15px;
         list-style: none;
         margin: 0;
         padding: 0;
@@ -224,6 +236,41 @@ section {position: relative;z-index: 1;}
     }
 }
 
+.cards img {
+    height: 60px; /* adapte à tes logos */
+}
+.cards-wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.cards {
+    position: relative;
+    height: 150px; /* même hauteur pour tous les logos */
+}
+
+.card {
+    position: absolute; /* nécessaire pour ton JS */
+    width: 150px;       /* largeur fixe pour chaque logo */
+    height: 150px;      /* hauteur fixe */
+}
+
+.card img {
+    width: 100%;        /* remplie toute la card */
+    height: 100%;       /* remplie toute la card */
+    object-fit: contain; /* conserve les proportions */
+}
+
+.cards-wrapper {
+    width: 100%;       /* prend toute la largeur possible */
+    max-width: 1200px; /* limite pour pas que ça devienne énorme sur grand écran */
+    margin: 0 auto;    /* centre le wrapper horizontalement */
+    overflow: hidden;  /* évite que les logos débordent visuellement */
+}
 /* Section Solutions */
 .solutions {padding: 60px 90px;}
 .solutions h2 {font-size: 2rem;margin-bottom: 30px;}
