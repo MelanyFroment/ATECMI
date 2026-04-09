@@ -10,7 +10,21 @@
         <div class="nav-menu" id="navMenu">
             <ul class="nav-left">
                 <li><a href="{% url 'about' %}">À propos</a></li>
-                <li><a href="#">Solutions</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">
+                        Solutions <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'depalettisation' %}">Dépalettisation</a></li> 
+                        <li><a href="{% url 'convoyage_produit' %}">Convoyage produit unitaire</a></li>
+                        <li><a href="#">Encartonnage</a></li> 
+                        <li><a href="#">Convoyage colis</a></li> 
+                        <li><a href="{% url 'palettisation' %}">Palettisation</a></li> 
+                        <li><a href="#">Intégration</a></li> 
+                        <li><a href="#">Convoyage palette</a></li> 
+                        <li><a href="#">Solutions robotisées</a></li> 
+                    </ul>
+                </li>             
                 <li><a href="#">Expertises</a></li>
                 <li><a href="#">Actualités</a></li>
             </ul>

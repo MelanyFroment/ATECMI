@@ -4,9 +4,6 @@ body {font-family: 'Montserrat';margin: 0;padding: 0;}
 .cta2 {background: #0e2643;padding: 1rem 2rem;border: none;color: #fff;cursor: pointer;font-weight: 900;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
 .cards { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; }
 
-/* VIDEO */
-.bg-video {position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: unset;z-index: 0;}
-
 /* NAVBAR */
 .navbar {position: absolute;top: 0;width: 100%;z-index: 10;background: #0f2745cf;display: flex;justify-content: space-around;align-items: center;}
 .navbar a {color: white;text-decoration: none;font-weight: 700;}
@@ -21,8 +18,45 @@ body {font-family: 'Montserrat';margin: 0;padding: 0;}
 .navbar a {color: white;text-decoration: none;font-weight: 700;}
 .cta a {background: #f2c94c;color: black;padding: 10px 20p;border-radius: 5px;}
 .nav-menu .cta {background: #f2c94c;color: black;border-radius: 2px;}
+.dropdown {
+    position: relative;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #0e2643;
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    display: none;
+    min-width: 200px;
+    z-index: 1000;
+}
+.dropdown-menu li {
+    padding: 10px 20px;
+}
+.dropdown-menu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
 
-/* Navbar sticky / scroll animation */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        display: none;
+        background: #0e2643;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+}
+
 .navbar.sticky {position: fixed;top: 0;width: 100%;background: #0f2745ee;box-shadow: 0 4px 8px rgba(0,0,0,0.2);animation: slideDown 0.3s ease-in-out;transition: background 0.3s, box-shadow 0.3s;}
 
 @keyframes slideDown {0% { transform: translateY(-100%); opacity: 0; }100% { transform: translateY(0); opacity: 1; }}
@@ -609,3 +643,8 @@ section {position: relative;z-index: 1;}
         padding: 60px 40px;
     }  
 }
+
+
+
+/* VIDEO **/
+.bg-video {position: absolute;top: 0;left: 0;width: 100%;height: 100%;object-fit: unset;z-index: 0;}
