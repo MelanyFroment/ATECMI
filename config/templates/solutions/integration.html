@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Intégration - ATECMI{% endblock %}
+
+{% block content %}
+<section class="hero-integration">
+    <img src="{% static 'images/accueil/Photo_integration.JPG' %}" alt="Intégration industrielle" class="hero-img">
+    <div class="hero-content">
+        <h1>Intégration : <br/> une ligne complète, <br/> un partenaire unique</h1>
+        <p>De l’étude à la mise en service, ATECMI intègre vos équipements <br/> pour une performance industrielle durable.</p>
+    </div>
+</section>
+
+<section class="features-integration">
+    <h2 class="text-center">Intégration industrielle <strong>clé en main</strong></h2>
+    <p class="text-center">
+        ATECMI assure l’intégration mécanique, électrique et automatisme de vos ensembles,
+        avec une logique de projet orientée performance, sécurité et maintenabilité.
+    </p>
+</section>
+
+<section class="about-conclusion">
+    <h2>Pourquoi choisir ATECMI pour l’intégration de votre ligne ?</h2>
+    <ul>
+        <li>Un interlocuteur unique et une maîtrise globale</li>
+        <li>Automatisme et pilotage système adaptés à vos contraintes</li>
+        <li>Mise en service, tests, et accompagnement</li>
+        <li>Suivi technique et SAV</li>
+    </ul>
+    <a class="cta" href="#">Demander une étude</a>
+</section>
+{% endblock %}
+
