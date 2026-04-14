@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Palettisation - ATECMI{% endblock %}
+
+{% block content %}
+<section class="hero-palettisation">
+    <img src="{% static 'images/palettisation/Photo_haut_page_Palettisation.JPG' %}" alt="Palettisation" class="hero-img">
+    <div class="hero-content">
+        <h1>Palettisation : <br/>Obtenez un meilleur<br/> rendement !</h1>
+        <p>Atecmi conçoit pour vous des solutions<br/> de palettisation sur-mesure, adaptées à vos<br/> besoins et vos cadences.</p>
+    </div>
+</section>
+
+<section class="features-palettisation">
+    <h2>Palettisation industrielle <strong>haute performance</strong></h2>
+    <div class="features-grid">
+        <div class="feature-text">
+            <h4>Palettiseurs à transfert de couches – Gamme COPAL 5 à 25</h4>
+            <p>Nos <strong>palettiseurs à transfert de couches</strong> (gamme COPAL 5 à 25) couvrent un large spectre de configurations :</p>
+            <ul>
+                <li>Simple entrée basse</li>
+                <li>Double entrée haute</li>
+                <li>Adaptation aux plans de palettisation complexes</li>
+                <li>Haute stabilité des charges</li>
+            </ul>
+            <p>Avantages :</p>
+            <ul>
+                <li>Cadence élevée jusqu’à 5 000 colis/heure</li>
+                <li>Compatible avec tous types de colis et produits packagés</li>
+                <li>Grande précision de positionnement</li>
+                <li>Fiabilité industrielle éprouvée</li>
+            </ul>
+            <p>Options disponibles :</p>
+            <ul>
+                <li>Distributeur automatique de palettes vides</li>
+                <li>Pose automatique d’intercalaires</li>
+                <li>Intégration complète dans ligne automatisée</li>
+            </ul>
+        </div>
+
+        <div class="feature-image">
+            <img src="/static/images/accueil/modelisation_palettisation.png" alt="Dépalettisation">
+        </div>
+    </div>
+</section>
+
+<section class="features-video">
+    <video autoplay muted loop class="bg-video">
+        <source src="{% static 'video/accueil2.mp4' %}" type="video/mp4">
+    </video>
+</section>
+
+<section class="features-cascade">
+    <div class="cascade-row">
+        <div class="cascade-col text-col">
+            <h3>Palettisation de barquettes à tenons (secteur laiterie)</h3>
+            <p>ATECMI propose des <strong>palettiseurs spécifiques pour barquettes à tenons</strong>, particulièrement adaptés au secteur laitier.</p>
+            <p>Configurations possibles :</p>
+            <ul>
+                <li>Entrée basse ou entrée haute</li>
+                <li>Barquettes pré-empilées ou non</li>
+                <li>Adaptation selon cadence de production</li>
+            </ul>
+            <p>Pour les environnements exigeants, ces machines peuvent être conçues en structure inox, répondant aux contraintes d’hygiène de l’industrie agroalimentaire.</p>
+        </div>
+        <div class="cascade-col img-col">
+            <img src="{% static 'images/palettisation/Photo_1_page_palettisation.JPG' %}" alt="Image 1">
+        </div>
+    </div>
+    <div class="cascade-row">
+        <div class="cascade-col img-col">
+            <img src="{% static 'images/palettisation/Photo_2_page_palettisation.JPG' %}" alt="Image 2">
+        </div>
+        <div class="cascade-col text-col">
+            <h3>Palettiseurs vrac à préhension</h3>
+            <p>Nos solutions de <strong>palettisation “vrac” à préhension</strong> permettent la manipulation directe des produits.</p>
+            <p>Applications principales :</p>
+            <ul>
+                <li>Bouteilles debout sur bacs à trous</li>
+                <li>Rangées à 90° ou 60° par superposition de couches</li>
+                <li>Valisettes (2, 3, 4 ou 6 bouteilles)</li>
+                <li>Boîtes de conserve</li>
+            </ul>
+            <p>Ces systèmes garantissent :</p>
+            <ul>
+                <li>Maintien optimal des produits</li>
+                <li>Adaptabilité aux formats</li>
+                <li>Productivité élevée</li>
+                <li>Sécurité des opérateurs</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="about-conclusion">
+    <h2>Pourquoi choisir ATECMI pour votre palettisation industrielle ?</h2>
+    <ul>
+        <li>Conception sur mesure</li>
+        <li>Intégration complète dans vos lignes existantes</li>
+        <li>Expertise en automatisation industrielle</li>
+        <li>Solutions adaptées aux contraintes agroalimentaires</li>
+        <li>Accompagnement de l’étude à la mise en service</li>
+    </ul>
+    <a class="cta" href="#">Demander une étude</a>
+</section>
+
+
+{% endblock %}
+
