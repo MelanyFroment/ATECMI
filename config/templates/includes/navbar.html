@@ -9,18 +9,18 @@
 
         <div class="nav-menu" id="navMenu">
             <ul class="nav-left">
-                <li><a href="{% url 'about' %}">À propos</a></li>
+                <li><a href="{% url 'core:about' %}">À propos</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle">
                         Solutions <i class="fa-solid fa-chevron-down"></i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="{% url 'depalettisation' %}">Dépalettisation</a></li> 
-                        <li><a href="{% url 'convoyage_produit' %}">Convoyage produit unitaire</a></li>
-                        <li><a href="{% url 'encartonnage' %}">Encartonnage</a></li>  
-                        <li><a href="#">Convoyage colis</a></li> 
-                        <li><a href="{% url 'palettisation' %}">Palettisation</a></li> 
-                        <li><a href="#">Intégration</a></li> 
+                        <li><a href="{% url 'solutions:depalettisation' %}">Dépalettisation</a></li> 
+                        <li><a href="{% url 'solutions:convoyage_produit' %}">Convoyage produit unitaire</a></li>
+                        <li><a href="{% url 'solutions:encartonnage' %}">Encartonnage</a></li>  
+                        <li><a href="{% url 'solutions:convoyage_colis' %}">Convoyage colis</a></li> 
+                        <li><a href="{% url 'solutions:palettisation' %}">Palettisation</a></li> 
+                        <li><a href="{% url 'solutions:integration' %}">Intégration</a></li> 
                         <li><a href="#">Convoyage palette</a></li> 
                         <li><a href="#">Solutions robotisées</a></li> 
                     </ul>
@@ -30,7 +30,7 @@
             </ul>
 
             <ul class="nav-right">
-                <li class="cta"><a href="{% url 'contact' %}">Contact</a></li>
+                <li class="cta"><a href="{% url 'core:contact' %}">Contact</a></li>
             </ul>
         </div>
 
