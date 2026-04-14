@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Convoyage colis - ATECMI{% endblock %}
+
+{% block content %}
+<section class="hero-convoyage_colis">
+    <img src="{% static 'images/accueil/photo_convoyage_colis.JPG' %}" alt="Convoyage colis" class="hero-img">
+    <div class="hero-content">
+        <h1>Convoyage colis : <br/> Fiabilisez vos flux <br/> en environnement industriel</h1>
+        <p>Solutions de convoyage colis sur mesure pour sécuriser l’acheminement, <br/> optimiser l’accumulation et maintenir vos cadences.</p>
+    </div>
+</section>
+
+<section class="features-convoyage_colis">
+    <h2 class="text-center">Convoyage colis <strong>robuste</strong> et <strong>évolutif</strong></h2>
+    <p class="text-center">
+        ATECMI conçoit des ensembles de convoyage adaptés à la nature de vos colis (caisses, bacs, cartons, packs),
+        à vos contraintes d’implantation et à vos objectifs de cadence.
+    </p>
+</section>
+
+<section class="about-conclusion">
+    <h2>Pourquoi choisir ATECMI pour votre convoyage colis ?</h2>
+    <ul>
+        <li>Étude et implantation optimisée selon vos flux</li>
+        <li>Solutions sur mesure et modulaires</li>
+        <li>Conception robuste, maintenance facilitée</li>
+        <li>Intégration complète avec votre ligne existante</li>
+    </ul>
+    <a class="cta" href="#">Demander une étude</a>
+</section>
+{% endblock %}
+
