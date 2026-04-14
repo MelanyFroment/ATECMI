@@ -1,0 +1,159 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Contact - ATECMI{% endblock %}
+
+{% block content %}
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0">
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-800"></div>
+    <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 20% 10%, rgba(242,201,76,0.45), transparent 45%), radial-gradient(circle at 80% 70%, rgba(14,38,67,0.6), transparent 55%);"></div>
+  </div>
+
+  <div class="relative mx-auto max-w-6xl px-6 py-16 sm:py-20">
+    <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
+      <div class="text-white">
+        <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold tracking-widest uppercase">
+          <span class="h-2 w-2 rounded-full bg-[#F2C94C]"></span>
+          Demande d’étude
+        </p>
+        <h1 class="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">
+          Contactez ATECMI
+        </h1>
+        <p class="mt-4 text-base leading-relaxed text-white/80 sm:text-lg">
+          Expliquez votre besoin (cadence, format, contraintes hygiène, intégration). Un expert vous répond rapidement avec une approche
+          <span class="font-semibold text-white">industrielle premium</span>.
+        </p>
+
+        <div class="mt-10 grid gap-4 rounded-2xl border border-white/10 bg-white/5 p-6">
+          <div class="flex items-start gap-4">
+            <div class="mt-0.5 flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
+              <i class="fa-solid fa-location-dot text-[#F2C94C]"></i>
+            </div>
+            <div>
+              <p class="text-sm font-semibold">Adresse</p>
+              <p class="text-sm text-white/75">5, Rue du Millénium — Z.A.C. de la croix rouge<br>59380 Socx</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="mt-0.5 flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
+              <i class="fa-solid fa-phone text-[#F2C94C]"></i>
+            </div>
+            <div>
+              <p class="text-sm font-semibold">Téléphone</p>
+              <p class="text-sm text-white/75">03.28.20.29.20</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="mt-0.5 flex h-10 w-10 items-center justify-center rounded-xl bg-white/10">
+              <i class="fa-solid fa-envelope text-[#F2C94C]"></i>
+            </div>
+            <div>
+              <p class="text-sm font-semibold">Email</p>
+              <p class="text-sm text-white/75">contact@atecmi.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-slate-200 bg-white shadow-[0_20px_60px_-30px_rgba(2,6,23,0.35)]">
+        <div class="border-b border-slate-200 px-6 py-5">
+          <h2 class="text-lg font-semibold tracking-tight text-slate-900">Formulaire de contact</h2>
+          <p class="mt-1 text-sm text-slate-600">Champs obligatoires. Réponse sous 24–48h ouvrées.</p>
+        </div>
+
+        <div class="px-6 py-6">
+          {% if messages %}
+            <div class="mb-6 space-y-3">
+              {% for message in messages %}
+                <div class="rounded-xl border px-4 py-3 text-sm
+                  {% if message.tags == 'success' %}
+                    border-emerald-200 bg-emerald-50 text-emerald-900
+                  {% elif message.tags == 'error' %}
+                    border-rose-200 bg-rose-50 text-rose-900
+                  {% else %}
+                    border-slate-200 bg-slate-50 text-slate-900
+                  {% endif %}
+                ">
+                  {{ message }}
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          <form method="post" class="space-y-5">
+            {% csrf_token %}
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label class="block text-sm font-medium text-slate-700" for="id_name">Nom</label>
+                <input class="mt-1 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none ring-0 placeholder:text-slate-400 focus:border-slate-300 focus:ring-2 focus:ring-[#0E2643]/15"
+                       type="text" name="name" id="id_name" required
+                       value="{{ form.name.value|default_if_none:'' }}"
+                       placeholder="Votre nom">
+                {% if form.name.errors %}<p class="mt-1 text-xs text-rose-600">{{ form.name.errors|striptags }}</p>{% endif %}
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700" for="id_company">Société</label>
+                <input class="mt-1 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none ring-0 placeholder:text-slate-400 focus:border-slate-300 focus:ring-2 focus:ring-[#0E2643]/15"
+                       type="text" name="company" id="id_company" required
+                       value="{{ form.company.value|default_if_none:'' }}"
+                       placeholder="Nom de l’entreprise">
+                {% if form.company.errors %}<p class="mt-1 text-xs text-rose-600">{{ form.company.errors|striptags }}</p>{% endif %}
+              </div>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label class="block text-sm font-medium text-slate-700" for="id_email">Email</label>
+                <input class="mt-1 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none ring-0 placeholder:text-slate-400 focus:border-slate-300 focus:ring-2 focus:ring-[#0E2643]/15"
+                       type="email" name="email" id="id_email" required
+                       value="{{ form.email.value|default_if_none:'' }}"
+                       placeholder="prenom.nom@entreprise.com">
+                {% if form.email.errors %}<p class="mt-1 text-xs text-rose-600">{{ form.email.errors|striptags }}</p>{% endif %}
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-slate-700" for="id_phone">Téléphone</label>
+                <input class="mt-1 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none ring-0 placeholder:text-slate-400 focus:border-slate-300 focus:ring-2 focus:ring-[#0E2643]/15"
+                       type="text" name="phone" id="id_phone" required
+                       value="{{ form.phone.value|default_if_none:'' }}"
+                       placeholder="+33 …">
+                {% if form.phone.errors %}<p class="mt-1 text-xs text-rose-600">{{ form.phone.errors|striptags }}</p>{% endif %}
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-slate-700" for="id_message">Votre besoin</label>
+              <textarea class="mt-1 min-h-[140px] w-full resize-y rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm outline-none ring-0 placeholder:text-slate-400 focus:border-slate-300 focus:ring-2 focus:ring-[#0E2643]/15"
+                        name="message" id="id_message" required
+                        placeholder="Cadence, formats, contraintes hygiène, intégration, délais…">{{ form.message.value|default_if_none:'' }}</textarea>
+              {% if form.message.errors %}<p class="mt-1 text-xs text-rose-600">{{ form.message.errors|striptags }}</p>{% endif %}
+            </div>
+
+            <div class="flex items-start gap-3 rounded-xl border border-slate-200 bg-slate-50 px-4 py-4">
+              <input class="mt-1 h-4 w-4 rounded border-slate-300 text-[#0E2643] focus:ring-[#0E2643]/20"
+                     type="checkbox" name="consent" id="id_consent" required
+                     {% if form.consent.value %}checked{% endif %}>
+              <label for="id_consent" class="text-sm text-slate-700">
+                J’accepte d’être recontacté au sujet de ma demande.
+                <span class="block text-xs text-slate-500">Vos données ne sont utilisées que pour répondre à votre sollicitation.</span>
+              </label>
+            </div>
+            {% if form.consent.errors %}<p class="mt-1 text-xs text-rose-600">{{ form.consent.errors|striptags }}</p>{% endif %}
+
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <button type="submit"
+                      class="inline-flex items-center justify-center rounded-xl bg-[#F2C94C] px-6 py-3 text-sm font-extrabold tracking-wide text-slate-900 shadow-[0_12px_30px_-18px_rgba(242,201,76,0.9)] transition hover:brightness-95 focus:outline-none focus:ring-2 focus:ring-[#F2C94C]/30">
+                Envoyer la demande
+              </button>
+              <p class="text-xs text-slate-500">
+                Urgence ? Appelez au <span class="font-semibold text-slate-700">03.28.20.29.20</span>.
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -3,7 +3,7 @@
 <nav class="navbar">
     <div class="nav-container">
 
-        <a href="/" class="logo-container">
+        <a href="{% url 'core:home' %}" class="logo-container">
             <img src="/static/images/logo.png" alt="Logo" class="logo">
         </a>
 
@@ -26,7 +26,7 @@
                     </ul>
                 </li>             
                 <li><a href="#">Expertises</a></li>
-                <li><a href="#">Actualités</a></li>
+                <li><a href="{% url 'blog:list' %}">Actualités</a></li>
             </ul>
 
             <ul class="nav-right">
