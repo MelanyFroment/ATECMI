@@ -6,7 +6,7 @@
 {% block content %}
 <section class="relative overflow-hidden bg-slate-950">
   <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 15% 20%, rgba(242,201,76,0.45), transparent 45%), radial-gradient(circle at 85% 75%, rgba(14,38,67,0.55), transparent 55%);"></div>
-  <div class="relative mx-auto max-w-6xl px-6 py-16 sm:py-20">
+  <div class="relative mx-auto max-w-6xl px-6 py-16 sm:py-40">
     <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold tracking-widest uppercase text-white">
       <span class="h-2 w-2 rounded-full bg-[#F2C94C]"></span>
       Actualités
@@ -26,7 +26,10 @@
            class="group rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-[0_30px_80px_-55px_rgba(2,6,23,0.55)]">
           <div class="aspect-[16/10] overflow-hidden rounded-t-2xl bg-slate-100">
             {% if a.image %}
-              <img src="{{ a.image.url }}" alt="{{ a.title }}" class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]">
+              <img loading="lazy" decoding="async"
+                   src="{{ a.image.url }}"
+                   alt="{{ a.title }}"
+                   class="h-full w-full object-cover transition duration-300 group-hover:scale-[1.03]">
             {% else %}
               <div class="flex h-full w-full items-center justify-center bg-gradient-to-br from-slate-900 to-slate-700">
                 <span class="text-xs font-semibold tracking-widest uppercase text-white/70">ATECMI</span>

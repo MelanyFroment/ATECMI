@@ -28,3 +28,11 @@ def contact(request):
         form = ContactForm()
 
     return render(request, "core/contact.html", {"form": form})
+
+
+def expertises(request):
+    return render(request, "core/expertises.html")
+
+
+def mentions_legales(request):
+    return render(request, "core/mentions_legales.html")

@@ -3,11 +3,17 @@
 
 {% block title %}Dépalettisation - ATECMI{% endblock %}
 
+{% block meta_description %}Solution de dépalettisation industrielle sur mesure : sécurisez vos flux, optimisez vos cadences et intégrez une mécanique fiable dès l’entrée de ligne. Expertise ATECMI (agroalimentaire).{% endblock %}
+
+{% block extra_head %}
+{% endblock %}
+
 {% block content %}
 <section class="hero-depalettisation">
     <img src="{% static 'images/depalettisation/Photo_haut_page_depal.jpg' %}" alt="Dépalettisation" class="hero-img">
     <div class="hero-content">
-        <h1>Dépalettisation : <br/> Fiabilité et cadence,<br/> dès la première opération </h1>
+        <p class="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold tracking-widest uppercase"><span class="h-2 w-2 rounded-full bg-[#ee0808]"></span>Dépalettisation</p>
+        <h1 class="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">Dépalettisation : <br/> Fiabilité et cadence,<br/> dès la première opération </h1>
         <p>ATECMI développe des systèmes de dépalettisation automatisés <br/>sur-mesure, pensés pour sécuriser vos flux et optimiser <br/>vos cadences dès l’entrée de ligne.</p>
     </div>
 </section>
@@ -28,7 +34,7 @@
 </section>
 
 <section class="features-video">
-    <video autoplay muted loop class="bg-video">
+    <video autoplay muted loop playsinline class="bg-video">
         <source src="{% static 'video/accueil2.mp4' %}" type="video/mp4">
     </video>
 </section>

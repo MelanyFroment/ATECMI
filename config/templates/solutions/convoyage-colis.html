@@ -4,31 +4,89 @@
 {% block title %}Convoyage colis - ATECMI{% endblock %}
 
 {% block content %}
-<section class="hero-convoyage_colis">
-    <img src="{% static 'images/accueil/photo_convoyage_colis.JPG' %}" alt="Convoyage colis" class="hero-img">
-    <div class="hero-content">
-        <h1>Convoyage colis : <br/> Fiabilisez vos flux <br/> en environnement industriel</h1>
-        <p>Solutions de convoyage colis sur mesure pour sécuriser l’acheminement, <br/> optimiser l’accumulation et maintenir vos cadences.</p>
+<section class="hero-depalettisation">
+    <img src="{% static 'images/convoyage_colis/Photo_Haut_de_page_Convoyage_colis.JPG' %}" alt="Convoyage colis" class="hero-img">
+    <div class="hero-content flex min-h-[105vh] flex-col justify-center py-16 text-white sm:min-h-[105vh] sm:py-20">
+        <p class="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold tracking-widest uppercase"><span class="h-2 w-2 rounded-full bg-[#60A5FA]"></span>Convoyage</p>
+        <h1 class="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">Convoyage de colis : <br/>Améliorez la productivité <br/>de vos chaînes !</h1>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
+            Atecmi conçoit des systèmes de régulation de flux pour répondre à vos besoins.
+        </p>
     </div>
 </section>
 
-<section class="features-convoyage_colis">
-    <h2 class="text-center">Convoyage colis <strong>robuste</strong> et <strong>évolutif</strong></h2>
+<section class="features-depalettisation">
+    <h2 class="text-center">Convoyeurs de colis / fardeaux / cartons <strong class="">optimisés</strong></h2>
     <p class="text-center">
-        ATECMI conçoit des ensembles de convoyage adaptés à la nature de vos colis (caisses, bacs, cartons, packs),
-        à vos contraintes d’implantation et à vos objectifs de cadence.
+        <strong>ATECMI</strong> conçoit des solutions de <strong>convoyage de colis automatisé</strong> permettant d’améliorer significativement la productivité, la fluidité et la gestion des flux au sein de vos lignes de production et plateformes logistiques.
     </p>
+    <p class="text-center mb-5">
+        Grâce à son expertise en <strong>transitique industrielle</strong> et en <strong>automatisme</strong>, ATECMI assure une régulation précise des flux pour garantir une circulation continue et sans rupture de vos produits.
+    </p>
+    <p class="sousligne mb-5"><strong>Une gamme complète de convoyeurs pour colis</strong></p>
+    <p>Nos solutions de manutention automatisée s’adaptent à tous types de colis, formats et cadences :</p>
+    <ul>
+        <li>Convoyeurs à rouleaux motorisés (entraînement positif ou accumulation dynamique)</li>
+        <li>Tables de convergence et de répartition des flux</li>
+        <li>Convoyeurs à tapis modulaire pour une grande flexibilité</li>
+        <li>Élévateurs et descenseurs à spirale pour optimiser les espaces</li>
+    </ul>
+    <p>Ces équipements permettent d’optimiser les flux logistiques, de réduire les temps d’arrêt et d’améliorer la performance globale des installations.</p>
+</section>
+
+<section class="features-video">
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="{% static 'video/accueil2.mp4' %}" type="video/mp4">
+    </video>
+</section>
+
+<section class="features-cascade">
+    <div class="cascade-row"> 
+        <div class="cascade-col text-col">
+            <h3 class="sousligne mb-5"><strong>Deux technologies de convoyeurs adaptées à vos besoins</strong></h3>
+            <p><strong>Convoyeurs à rouleaux motorisés</strong></p>
+            <ul>
+                <li>Entraînement par courroies toriques haute résistance</li>
+                <li>Solution fiable et durable, conçue pour un usage intensif</li>
+                <li>Idéal pour le transport de colis unitaires avec gestion précise des flux</li>
+            </ul>
+            <p><strong>Convoyeurs à tapis modulaire et chaînes</strong></p>
+            <ul>
+                <li>Tapis modulaire en acétal ou chaînes à palettes / galets</li>
+                <li>Parfait pour les applications nécessitant une accumulation dynamique</li>
+                <li>Adapté aux environnements industriels exigeants</li>
+            </ul>
+        </div>
+        <div class="cascade-col img-col">
+            <img src="{% static 'images/convoyage_colis/Photo_1_ Page_convoyage_colis.JPG' %}" alt="Intégration de ligne">
+        </div>
+    </div>
+    <div class="cascade-row">
+        <div class="cascade-col img-col">
+            <img src="{% static 'images/convoyage_colis/convoyeur_cartons_lesieur.JPG' %}" alt="Convoyage produit unitaire">
+        </div>
+        <div class="cascade-col text-col">
+            <h3 class="sousligne mb-5"><strong>Des équipements robustes et personnalisables</strong></h3>
+            <p>Les convoyeurs ATECMI sont conçus pour s’intégrer parfaitement à vos installations :</p>
+            <ul>
+                <li>Fabrication en acier peint ou en inox selon les contraintes environnementales</li>
+                <li>Solutions sur mesure adaptées à vos flux, cadences et contraintes d’espace</li>
+                <li>Intégration complète avec vos systèmes automatisés</li>
+            </ul>
+        </div>
+    </div>
 </section>
 
 <section class="about-conclusion">
-    <h2>Pourquoi choisir ATECMI pour votre convoyage colis ?</h2>
+    <h2>Pourquoi choisir ATECMI pour votre solution de convoyage de colis ?</h2>
     <ul>
-        <li>Étude et implantation optimisée selon vos flux</li>
-        <li>Solutions sur mesure et modulaires</li>
-        <li>Conception robuste, maintenance facilitée</li>
-        <li>Intégration complète avec votre ligne existante</li>
+        <li>Solutions de convoyage logistique sur mesure</li>
+        <li>Optimisation des flux et de la productivité</li>
+        <li>Fiabilité et robustesse des équipements</li>
+        <li>Expertise en automatisme industriel et transitique</li>
+        <li>Adaptation à tous types de colis et secteurs d’activité</li>
     </ul>
-    <a class="cta" href="#">Demander une étude</a>
+    <a class="cta" href="{% url 'core:contact' %}">Demander une étude</a>
 </section>
 {% endblock %}
 

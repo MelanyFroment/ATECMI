@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Expertises - ATECMI{% endblock %}
+{% block meta_description %}Expertises ATECMI : bureau d’étude, implantation, automatisme, SAV. Une approche industrielle premium pour sécuriser performance, maintenabilité et disponibilité.{% endblock %}
+
+{% block extra_head %}
+{% endblock %}
+
+{% block content %}
+<section class="hero-section relative overflow-hidden bg-slate-950">
+  <img class="absolute inset-0 h-full w-full object-cover opacity-90" src="{% static 'images/accueil/Photo_integration.JPG' %}" alt="Expertises ATECMI">
+  <div class="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/50 to-transparent"></div>
+  <div class="hero-content flex min-h-[105vh] flex-col justify-center py-16 text-white sm:min-h-[105vh] sm:py-20">
+    <h1 class="text-4xl font-semibold tracking-tight sm:text-6xl">Nos expertises</h1>
+    <p class="mt-5 max-w-2xl text-base text-white/80 sm:text-lg">Une maîtrise complète, de l’étude au SAV, pour des lignes industrielles performantes.</p>
+    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+      <a class="btn-industrial-premium" href="{% url 'core:contact' %}">Demander une étude</a>
+      <a class="btn-industrial-outline" href="#contenu">Découvrir</a>
+    </div>
+  </div>
+</section>
+
+<section id="contenu" class="mx-auto max-w-6xl px-6 py-14">
+  <div class="grid gap-6 md:grid-cols-2">
+    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <h2 class="text-xl font-semibold">Bureau d’étude</h2>
+      <p class="mt-2 text-sm text-slate-700"><strong>Description</strong> : analyse des besoins, contraintes process, objectifs cadence/qualité.</p>
+      <p class="mt-2 text-sm text-slate-700"><strong>Méthodologie</strong> : cadrage, relevés, itérations, validations.</p>
+      <p class="mt-2 text-sm text-slate-700"><strong>Process</strong> : ateliers, proposition, chiffrage, planning.</p>
+      <p class="mt-2 text-sm text-slate-700"><strong>Technologies</strong> : CAO, standards industriels, sécurité.</p>
+      <p class="mt-2 text-sm text-slate-700"><strong>Qualité</strong> : traçabilité, dossiers techniques, jalons.</p>
+    </div>
+    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <h2 class="text-xl font-semibold">Implantation</h2>
+      <p class="mt-2 text-sm text-slate-700"><strong>Description</strong> : implantation optimisée pour fluidifier les flux et faciliter la maintenance.</p>
+      <p class="mt-2 text-sm text-slate-700"><strong>Méthodologie</strong> : étude flux, interfaces machines, sécurité.</p>
+      <p class="mt-2 text-sm text-slate-700"><strong>Process</strong> : plans, revues techniques, préparation chantier.</p>
+      <p class="mt-2 text-sm text-slate-700"><strong>Technologies</strong> : layout, standards convoyage, capteurs.</p>
+      <p class="mt-2 text-sm text-slate-700"><strong>Qualité</strong> : conformité, accessibilité, robustesse.</p>
+    </div>
+    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <h2 class="text-xl font-semibold">Automatisme</h2>
+      <p class="mt-2 text-sm text-slate-700"><strong>Description</strong> : pilotage, régulation des flux, sécurité machine.</p>
+      <p class="mt-2 text-sm text-slate-700"><strong>Méthodologie</strong> : analyse fonctionnelle, architecture, tests.</p>
+      <p class="mt-2 text-sm text-slate-700"><strong>Process</strong> : FAT/SAT, mise en cadence, formation.</p>
+      <p class="mt-2 text-sm text-slate-700"><strong>Technologies</strong> : automates, variateurs, HMI.</p>
+      <p class="mt-2 text-sm text-slate-700"><strong>Qualité</strong> : stabilité, diagnosabilité, documentation.</p>
+    </div>
+    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+      <h2 class="text-xl font-semibold">SAV</h2>
+      <p class="mt-2 text-sm text-slate-700"><strong>Description</strong> : support, maintenance, pièces, évolutions.</p>
+      <p class="mt-2 text-sm text-slate-700"><strong>Méthodologie</strong> : diagnostic, plan d’action, interventions.</p>
+      <p class="mt-2 text-sm text-slate-700"><strong>Process</strong> : suivi, recommandations, réactivité.</p>
+      <p class="mt-2 text-sm text-slate-700"><strong>Technologies</strong> : procédures, checklists, composants standard.</p>
+      <p class="mt-2 text-sm text-slate-700"><strong>Qualité</strong> : disponibilité, délais, traçabilité.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}
+

@@ -23,3 +23,11 @@ def convoyage_colis(request):
 
 def integration(request):
     return render(request, "solutions/integration.html")
+
+
+def convoyage_palette(request):
+    return render(request, "solutions/convoyage-palette.html")
+
+
+def solutions_robotisees(request):
+    return render(request, "solutions/solutions-robotisees.html")
