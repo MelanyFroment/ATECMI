@@ -4,8 +4,8 @@
 {% block title %}{{ article.title }} - ATECMI{% endblock %}
 
 {% block content %}
-<section class="mx-auto max-w-4xl px-6 py-12">
-  <div class="mb-8">
+<section class="mx-auto max-w-4xl px-6 py-20">
+  <div class="mb-8 mt-10">
     <a href="{% url 'blog:list' %}" class="inline-flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-slate-900">
       <span>←</span>
       Retour aux actualités
@@ -24,7 +24,10 @@
 
     {% if article.image %}
       <div class="aspect-[16/9] bg-slate-100">
-        <img src="{{ article.image.url }}" alt="{{ article.title }}" class="h-full w-full object-cover">
+        <img loading="lazy" decoding="async"
+             src="{{ article.image.url }}"
+             alt="{{ article.title }}"
+             class="h-full w-full object-cover">
       </div>
     {% endif %}
 

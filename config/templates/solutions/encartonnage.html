@@ -4,70 +4,70 @@
 {% block title %}Encartonnage - ATECMI{% endblock %}
 
 {% block content %} 
-<section class="hero-encartonnage ">
+<section class="hero-encartonnage">
     <img src="{% static 'images/encartonnage/Photo_haut_page_encartonnage.JPG' %}" alt="encartonnage" class="hero-img">
-    <div class="hero-content">
-        <h1>Encartonnage : <br/>Optez pour le <br/>conditionnementhaute <br/> cadence !</h1>
-        <p>Atecmi conçoit pour vous des solutions <br/> d’encartonnage industriel correspondant à vos cadences.</p>
+    <div class="hero-content flex min-h-[105vh] flex-col justify-center py-16 text-white sm:min-h-[105vh] sm:py-20">
+        <p class="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold tracking-widest uppercase">
+            <span class="h-2 w-2 rounded-full bg-[#ffffff]"></span>
+            Encartonnage
+          </p>
+        <h1 class="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">Encartonnage : <br/>Optez pour le<br/>conditionnement haute<br/>cadence !</h1>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">Atecmi conçoit pour vous des solutions <br/> d’encartonnage industriel correspondant à vos cadences.</p>
     </div>
 </section> 
 
-<section class="features-encartonnage"> 
+<section class="features-encartonnage2"> 
     <h2>Solutions d’encartonnage <strong>efficaces</strong></h2>
-        <p><strong>ATECMI</strong> conçoit et intègre des <strong>solutions d’encartonnage automatisé</strong> performantes, adaptées aux lignes de <strong>production à forte cadence</strong>. Nos installations permettent de traiter entre 3 000 et 25 000 bouteilles par heure, tout en garantissant précision, fiabilité et continuité de production.</p>
+    <p><strong>ATECMI</strong> conçoit et intègre des <strong>solutions d’encartonnage automatisé</strong> performantes, adaptées aux lignes de <strong>production à forte cadence</strong>. Nos installations permettent de traiter entre 3 000 et 25 000 bouteilles par heure, tout en garantissant précision, fiabilité et continuité de production.</p>
 </section>
 
 <section class="features-video">
-    <video autoplay muted loop class="bg-video">
+    <video autoplay muted loop playsinline class="bg-video">
         <source src="{% static 'video/accueil2.mp4' %}" type="video/mp4">
     </video>
 </section>
 
-
-<section class="features-cascade-encartonnage">
+<section class="features-encartonnage">
     <p class="sousligne"><strong>Une ligne complète d’encartonnage automatisé</strong></p>
-    <p>ATECMI propose des <strong>ensembles d’encartonnage clés en main</strong>, intégrant l’ensemble des équipements nécessaires au conditionnement en caisses américaines :</p>
+    <p>ATECMI propose des <strong>ensembles d’encartonnage clés en main</strong>, intégrant l’ensemble des équipements nécessaires au conditionnement en caisses américaines :    </p>
+</section>
+<section class="features-cascade">
     <div class="cascade-row">
-        <div class="cascade-col img-col">
-            <img src="{% static 'images/encartonnage/Photo_1_page_encartonnage.jpg' %}" alt="Image 1">
-        </div>
         <div class="cascade-col text-col">
-            <p class="sousligne">Formeuses de caisses</p>
-            <ul>
+            <p class="sousligne mb-5"><strong>Formeuses de caisses</strong></p>
+            <ul class="ml-5">
                 <li>Cadence jusqu’à 40 caisses/minute</li>
                 <li>Structure mécano-soudée en acier avec finition époxy</li>
                 <li>Intégration d’un système de collage hot melt haute performance (type Nordson ProBlue)</li>
                 <li>Deux configurations disponibles :</li>
-                <ul>
+                <ul class="ml-5">
                     <li>Chargement des cartons en position verticale et inclinée (partie haute)</li>
                     <li>Chargement des cartons à plat (partie basse)</li>
-                </ul>
-            </ul>
+                </ul> 
+            </ul> 
         </div>
-        
+        <div class="cascade-col img-col">
+            <img src="{% static 'images/encartonnage/Photo_1_page_encartonnage.jpg' %}" alt="Image 1">
+        </div>
     </div>
     <div class="cascade-row">
-
+        <div class="cascade-col img-col">
+            <img src="{% static 'images/encartonnage/Photo_2_page_encartonnage.jpg' %}" alt="Image 1">
+        </div>
         <div class="cascade-col text-col">
-            <p class="sousligne">Fermeuses de caisses</p>
-            <ul>
+            <p class="sousligne mb-5"><strong>Fermeuses de caisses</strong></p>
+            <ul class="ml-5">
                 <li>Cadence jusqu’à 45 caisses/minute</li>
                 <li>Entraînement par chaînes à barres pour une grande stabilité</li>
                 <li>Fermeture sécurisée avec système de colle industrielle intégré</li>
                 <li>Conception robuste pour une utilisation intensive en environnement industriel</li>
             </ul>
         </div>
-        <div class="cascade-col img-col">
-            <img src="{% static 'images/encartonnage/Photo_2_page_encartonnage.jpg' %}" alt="Image 2">
-        </div>
+        
     </div>
     <div class="cascade-row">
-        
-        <div class="cascade-col img-col">
-            <img src="{% static 'images/encartonnage/Photo_3_page_encartonnage.jpg' %}" alt="Image 3">
-        </div>
         <div class="cascade-col text-col">
-            <p class="sousligne">Solution d’encartonnage “traditionnelle” à portique</p>
+            <p class="sousligne mb-5"><strong>Solution d’encartonnage “traditionnelle” à portique</strong></p>
             <p>ATECMI propose également une solution éprouvée de type portique, idéale pour les lignes nécessitant flexibilité et précision :</p>
             <ul>
                 <li>Structure mécano-soudée robuste en acier finition époxy</li>
@@ -75,6 +75,9 @@
                 <li>Double motorisation brushless (levage et translation) pour une grande précision</li>
                 <li>Préhension des bouteilles par tulipes à membrane gonflable, assurant un maintien sécurisé sans détérioration</li>
             </ul>
+        </div>
+        <div class="cascade-col img-col">
+            <img src="{% static 'images/encartonnage/Photo_3_page_encartonnage.jpg' %}" alt="Image 3">
         </div>
     </div>
 </section>
@@ -88,7 +91,7 @@
         <li>Intégration complète dans vos lignes de production</li>
         <li>Expertise reconnue en transitique et automatisme industriel</li>
     </ul>
-    <a class="cta" href="#">Demander une étude</a>
+    <a class="cta" href="{% url 'core:contact' %}">Demander une étude</a>
 </section>
 {% endblock %} 
 

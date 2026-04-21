@@ -24,13 +24,23 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ktv_62d2#q22jt)2llosw4t*3*mwy+^!##b&3id@(d%_uq(z$l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+def _env_bool(value: str | None, default: bool = False) -> bool:
+    if value is None:
+        return default
+    return value.strip().lower() in {"1", "true", "yes", "y", "on"}
+
+
+IS_RENDER = os.getenv("RENDER") is not None
+DEBUG = _env_bool(os.getenv("DJANGO_DEBUG"), default=not IS_RENDER)
 
 ALLOWED_HOSTS = ["atecmi.onrender.com", "127.0.0.1","localhost"]
 
-#add
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
- 
+# WhiteNoise static storage:
+# - in production: hashed + manifest (requires collectstatic)
+# - in local dev: avoid manifest errors while editing templates/assets
+if not DEBUG:
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 # Application definition
 
@@ -123,7 +133,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
 

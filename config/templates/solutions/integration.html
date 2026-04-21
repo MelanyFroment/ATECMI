@@ -4,20 +4,84 @@
 {% block title %}Intégration - ATECMI{% endblock %}
 
 {% block content %}
-<section class="hero-integration">
+<section class="hero-depalettisation">
     <img src="{% static 'images/accueil/Photo_integration.JPG' %}" alt="Intégration industrielle" class="hero-img">
-    <div class="hero-content">
-        <h1>Intégration : <br/> une ligne complète, <br/> un partenaire unique</h1>
-        <p>De l’étude à la mise en service, ATECMI intègre vos équipements <br/> pour une performance industrielle durable.</p>
+    <div class="hero-content flex min-h-[105vh] flex-col justify-center py-16 text-white sm:min-h-[105vh] sm:py-20">
+        <p class="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold tracking-widest uppercase"><span class="h-2 w-2 rounded-full bg-[#6bfa60]"></span>Integration</p>
+        <h1 class="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">Intégration : <br/>Une ligne complète,<br/>un partenaire unique</h1>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
+            De l’étude à la mise en service, ATECMI intègre vos équipements pour une performance industrielle durable,
+            avec une maîtrise mécanique, électrique et automatisme.
+        </p>
     </div>
 </section>
 
-<section class="features-integration">
+<section class="features-depalettisation">
     <h2 class="text-center">Intégration industrielle <strong>clé en main</strong></h2>
-    <p class="text-center">
-        ATECMI assure l’intégration mécanique, électrique et automatisme de vos ensembles,
-        avec une logique de projet orientée performance, sécurité et maintenabilité.
-    </p>
+    <div class="features-grid">
+        <div class="feature-text">
+            <h4>Une conduite de projet orientée performance et maintenabilité</h4>
+            <p>
+                L’intégration ne se limite pas à assembler des machines : nous concevons l’ensemble comme un système.
+                Implantation, flux, interfaces, sécurité, pilotage, ergonomie opérateur — tout est pensé pour la cadence
+                et la fiabilité.
+            </p>
+            <p>Prestations courantes :</p>
+            <ul>
+                <li>Étude & implantation (plans, 3D, contraintes site)</li>
+                <li>Intégration mécanique, électrique, automatisme</li>
+                <li>Mise en service, essais, montée en cadence</li>
+                <li>Documentation, formation, SAV</li>
+            </ul>
+        </div>
+
+        <div class="feature-image">
+            <img src="{% static 'images/accueil/Photo_integration.JPG' %}" alt="Intégration industrielle">
+        </div>
+    </div>
+</section>
+
+<section class="features-video">
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="{% static 'video/accueil2.mp4' %}" type="video/mp4">
+    </video>
+</section>
+
+<section class="features-cascade">
+    <div class="cascade-row">
+        <div class="cascade-col text-col">
+            <h3>Interopérabilité avec vos équipements</h3>
+            <p>
+                Nous assurons les interfaces mécaniques et logicielles entre vos postes amont/aval pour garantir une ligne
+                cohérente (convoyage, robots, encartonneuses, palettiseurs, etc.).
+            </p>
+            <ul>
+                <li>Gestion des flux et des priorités</li>
+                <li>Diagnostics et alarmes exploitables</li>
+                <li>Sécurités machine intégrées</li>
+            </ul>
+        </div>
+        <div class="cascade-col img-col">
+            <img src="{% static 'images/accueil/photo_convoyage_colis.JPG' %}" alt="Convoyage colis">
+        </div>
+    </div>
+    <div class="cascade-row">
+        <div class="cascade-col img-col">
+            <img src="{% static 'images/accueil/modelisation_palettisation.png' %}" alt="Palettisation">
+        </div>
+        <div class="cascade-col text-col">
+            <h3>Une ligne évolutive</h3>
+            <p>
+                Nous privilégions des architectures modulaires et des standards industriels, pour faciliter les extensions,
+                les adaptations de formats et les évolutions de cadence.
+            </p>
+            <ul>
+                <li>Modularité mécanique</li>
+                <li>Réserves d’E/S et évolutivité automatisme</li>
+                <li>Maintenance facilitée</li>
+            </ul>
+        </div>
+    </div>
 </section>
 
 <section class="about-conclusion">
@@ -28,7 +92,7 @@
         <li>Mise en service, tests, et accompagnement</li>
         <li>Suivi technique et SAV</li>
     </ul>
-    <a class="cta" href="#">Demander une étude</a>
+    <a class="cta" href="{% url 'core:contact' %}">Demander une étude</a>
 </section>
 {% endblock %}
 
