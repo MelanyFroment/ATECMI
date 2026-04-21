@@ -21,15 +21,14 @@
     <div class="footer-links">
         <h2>Nos solutions</h2>
       <ul>
-        <li>Dépalettisation</li>
-        <li>Convoyage produits unitaires</li>
-        <li>Encartonnage</li>
-        <li>Convoyage colis</li>
-        <li>Palettisation</li>
-        <li>Intégration</li>
-        <li>Convoyage palettes</li>
-        <li>Intégration</li>
-        <li>Solutions robotisées</li>
+        <li><a href="{% url 'solutions:depalettisation' %}">Dépalettisation</a></li>
+        <li><a href="{% url 'solutions:convoyage_produit' %}">Convoyage produits unitaires</a></li>
+        <li><a href="{% url 'solutions:encartonnage' %}">Encartonnage</a></li>
+        <li><a href="{% url 'solutions:convoyage_colis' %}">Convoyage colis</a></li>
+        <li><a href="{% url 'solutions:palettisation' %}">Palettisation</a></li>
+        <li><a href="{% url 'solutions:integration' %}">Intégration</a></li>
+        <li><a href="{% url 'solutions:convoyage_palette' %}">Convoyage palettes</a></li>
+        <li><a href="{% url 'solutions:solutions_robotisees' %}">Solutions robotisées</a></li>
       </ul>
     </div>
 
@@ -45,9 +44,10 @@
 
     <div class="footer-links">
       <ul>
-        <li><strong>À propos</strong></li>
-        <li><strong>Actualités</strong></li>
-        <li><strong>Contact</strong></li>
+        <li><a href="{% url 'core:about' %}"><strong>À propos</strong></a></li>
+        <li><a href="{% url 'blog:list' %}"><strong>Actualités</strong></a></li>
+        <li><a href="{% url 'core:contact' %}"><strong>Contact</strong></a></li>
+        <li><a href="{% url 'core:mentions_legales' %}"><strong>Mentions légales</strong></a></li>
       </ul>
     </div>
 

@@ -9,10 +9,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>{% block title %}ATECMI{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}ATECMI conçoit et fabrique des solutions industrielles sur mesure pour le conditionnement agroalimentaire.{% endblock %}">
 
     <!-- CSS -->
+    <!-- Tailwind via CDN (kept sync to avoid layout flash/CLS) -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script src='https://cdn.tailwindcss.com'></script>
+    {% block extra_head %}{% endblock %}
 </head>
 <body class="font-sans bg-gray-50">
 
@@ -24,7 +27,25 @@
 
     {% include "includes/footer.html" %}
 
+    <div id="cookieBanner" class="hidden fixed inset-x-0 bottom-0 z-50 p-4">
+      <div class="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white/95 p-4 shadow-xl backdrop-blur sm:flex sm:items-center sm:justify-between sm:gap-6">
+        <div class="text-sm text-slate-700">
+          <p class="font-semibold text-slate-900">Cookies</p>
+          <p class="mt-1 text-xs leading-relaxed text-slate-600">
+            Nous utilisons des cookies pour mesurer l’audience et améliorer l’expérience.
+            <a class="font-semibold text-slate-900 underline underline-offset-4" href="{% url 'core:mentions_legales' %}">Mentions légales</a>.
+          </p>
+        </div>
+        <div class="mt-3 flex flex-col gap-2 sm:mt-0 sm:flex-row">
+          <button id="cookieAccept" type="button" class="btn-industrial-premium">Accepter</button>
+          <button id="cookieReject" type="button" class="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 hover:bg-slate-50">Refuser</button>
+        </div>
+      </div>
+    </div>
+
     <!-- JS -->
     <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/cookies.js' %}"></script>
+    {% block scripts %}{% endblock %}
 </body>
 </html>

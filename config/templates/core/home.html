@@ -3,32 +3,42 @@
 
 {% block title %}Accueil - ATECMI{% endblock %}
 
+{% block extra_head %}
+{% endblock %}
+
 {% block content %}
-<section class="hero">
-    <video autoplay muted loop class="bg-video">
+<section class="hero-convoyage_produit relative overflow-hidden bg-slate-950">
+    <video autoplay muted loop playsinline class="absolute inset-0 h-full w-full object-cover opacity-90">
         <source src="{% static 'video/accueil2.mp4' %}" type="video/mp4">
     </video>
-    <section  class="hero-content">
-        <h1>Concepteur et</br> fabricant de vos </br>solutions sur mesure</h1>
-        <p>Depuis 1978, Atecmi conçoit vos chaînes complètes de conditionnement</p>
-        <div class="hero-buttons">
-            <a href="#solutions" class="cta">Nos solutions</a>
-            <button class="cta2">Demander une étude</button>
+    <div class="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/50 to-transparent"></div>
+    <div class="relative text-white hero-content flex min-h-[105vh] flex-col justify-center py-16 text-white sm:min-h-[105vh] sm:py-20">
+        <h1 class="text-4xl font-semibold tracking-tight sm:text-6xl">Concepteur et<br>fabricant de vos<br>solutions sur mesure</h1>
+        <p class="mt-5 max-w-2xl text-base text-white/80 sm:text-lg">Depuis 1978, ATECMI conçoit vos chaînes complètes de conditionnement.</p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#solutions" class="btn-industrial-outline">Nos solutions</a>
+            <a href="{% url 'core:contact' %}" class="btn-industrial-premium">Demander une étude</a>
         </div>
-    </section>
+    </div>
 </section>
 
 <section class="features">
     <h2 class="text-center">Ils nous font <strong>confiance</strong></h2>
-    <div class="cards-wrapper">
-        <div class="cards">
-            <div class="card"><img src="/static/images/accueil/serac.png" alt="Logo 1"></div>
-            <div class="card"><img src="/static/images/accueil/castel since 1949.png" alt="Logo 2"></div>
-            <div class="card"><img src="/static/images/accueil/candia.png" alt="Logo 3"></div>
-            <div class="card"><img src="/static/images/accueil/bonduelle.png" alt="Logo 4"></div>
-            <div class="card"><img src="/static/images/accueil/eclor.png" alt="Logo 5"></div>
+    <div class="logo-marquee" aria-label="Logos clients (défilement)">
+        <div class="logo-track">
+            <div class="logo-item"><img src="{% static 'images/accueil/serac.png' %}" alt="Serac"></div>
+            <div class="logo-item"><img src="{% static 'images/accueil/castel since 1949.png' %}" alt="Castel (since 1949)"></div>
+            <div class="logo-item"><img src="{% static 'images/accueil/candia.png' %}" alt="Candia"></div>
+            <div class="logo-item"><img src="{% static 'images/accueil/bonduelle.png' %}" alt="Bonduelle"></div>
+            <div class="logo-item"><img src="{% static 'images/accueil/eclor.png' %}" alt="Eclor"></div>
+
+            <div class="logo-item"><img src="{% static 'images/accueil/serac.png' %}" alt="" aria-hidden="true"></div>
+            <div class="logo-item"><img src="{% static 'images/accueil/castel since 1949.png' %}" alt="" aria-hidden="true"></div>
+            <div class="logo-item"><img src="{% static 'images/accueil/candia.png' %}" alt="" aria-hidden="true"></div>
+            <div class="logo-item"><img src="{% static 'images/accueil/bonduelle.png' %}" alt="" aria-hidden="true"></div>
+            <div class="logo-item"><img src="{% static 'images/accueil/eclor.png' %}" alt="" aria-hidden="true"></div>
         </div>
-    </div>
+</div>
 </section>
 
 <section id="solutions" class="solutions">
@@ -37,51 +47,59 @@
     <div class="solutions-row">
         <a href="{% url 'solutions:depalettisation' %}" class="link-page">
             <div class="solution-item">
-                <img src="/static/images/accueil/modelisation_depalettisation.png" alt="">
+                <img loading="lazy" decoding="async" src="{% static 'images/accueil/modelisation_depalettisation.png' %}" alt="">
                 <p>Dépalettisation</p>
             </div>
         </a>
 
         <a href="{% url 'solutions:convoyage_produit' %}" class="link-page">
             <div class="solution-item">
-                <img src="/static/images/accueil/Photo_convoyage_produit_unitaire.jpg" alt="">
+                <img loading="lazy" decoding="async" src="{% static 'images/accueil/Photo_convoyage_produit_unitaire.jpg' %}" alt="">
                 <p>Convoyage produit unitaire</p>
             </div>
         </a>
-        
 
-        <div class="solution-item">
-            <img src="/static/images/accueil/modelisation_encartonnage.png" alt="">
-            <p>Encartonnage</p>
-        </div>
+        <a href="{% url 'solutions:encartonnage' %}" class="link-page">
+            <div class="solution-item">
+                <img loading="lazy" decoding="async" src="{% static 'images/accueil/modelisation_encartonnage.png' %}" alt="">
+                <p>Encartonnage</p>
+            </div>
+        </a>
 
-        <div class="solution-item">
-            <img src="/static/images/accueil/photo_convoyage_colis.JPG" alt="">
-            <p>Convoyage colis</p>
-        </div>
+        <a href="{% url 'solutions:convoyage_colis' %}" class="link-page">
+            <div class="solution-item">
+                <img loading="lazy" decoding="async" src="{% static 'images/accueil/photo_convoyage_colis.JPG' %}" alt="">
+                <p>Convoyage colis</p>
+            </div>
+        </a>
 
         <a href="{% url 'solutions:palettisation' %}" class="link-page">
             <div class="solution-item">
-                <img src="/static/images/accueil/modelisation_palettisation.png" alt="">
+                <img loading="lazy" decoding="async" src="{% static 'images/accueil/modelisation_palettisation.png' %}" alt="">
                 <p>Palettisation</p>
             </div>
         </a>
-       
 
-        <div class="solution-item">
-            <img src="/static/images/accueil/Photo_integration.JPG" alt="">
-            <p>Intégration</p>
-        </div>
+        <a href="{% url 'solutions:integration' %}" class="link-page">
+            <div class="solution-item">
+                <img loading="lazy" decoding="async" src="{% static 'images/accueil/Photo_integration.JPG' %}" alt="">
+                <p>Intégration</p>
+            </div>
+        </a>
 
-        <div class="solution-item">
-            <img src="/static/images/accueil/Photo_Convoyage_palettes .JPG" alt="">
-            <p>Convoyage palette</p>
-        </div>
+        <a href="{% url 'solutions:convoyage_palette' %}" class="link-page">
+            <div class="solution-item">
+                <img loading="lazy" decoding="async" src="{% static 'images/accueil/Photo_Convoyage_palettes .JPG' %}" alt="">
+                <p>Convoyage palette</p>
+            </div>
+        </a>
 
-        <div class="solution-item">
-            <img src="/static/images/accueil/Photo_solutions_robotisees.jpg" alt="">
-            <p>Solutions robotisées</p>
-        </div>
+        <a href="{% url 'solutions:solutions_robotisees' %}" class="link-page">
+            <div class="solution-item">
+                <img loading="lazy" decoding="async" src="{% static 'images/accueil/Photo_solutions_robotisees.jpg' %}" alt="">
+                <p>Solutions robotisées</p>
+            </div>
+        </a>
     </div>
 </section>
 
@@ -90,17 +108,17 @@
 
     <div class="highlight-content">
         <div class="highlight-item">
-            <h3>45 <strong>+</strong></h3>
+            <h3><span class="count-up" data-count="45">0</span> <strong>+</strong></h3>
             <p>ans d’expérience</p>
         </div>
 
         <div class="highlight-item">
-            <h3>250 <strong>+</strong></h3>
+            <h3><span class="count-up" data-count="250">0</span> <strong>+</strong></h3>
             <p>clients industriels</p>
         </div>
 
         <div class="highlight-item">
-            <h3>40 <strong>+</strong></h3>
+            <h3><span class="count-up" data-count="40">0</span> <strong>+</strong></h3>
             <p>collaborateurs</p>
         </div>
     </div>
@@ -111,22 +129,22 @@
     <p>Atecmi vous accompagne dans votre projet de A à Z</p>
     <div class="expertises-content">
         <div class="expertises-item">
-            <img src="/static/images/accueil/conception1.png" alt="Expérience">
+            <img loading="lazy" decoding="async" src="{% static 'images/accueil/conception1.png' %}" alt="Expérience">
             <p>Étude et implantation optimisée </p>
         </div>
 
         <div class="expertises-item">
-            <img src="/static/images/accueil/conception2.png" alt="Clients">
+            <img loading="lazy" decoding="async" src="{% static 'images/accueil/conception2.png' %}" alt="Clients">
             <p>Conception sur mesure</p>
         </div>
 
         <div class="expertises-item">
-            <img src="/static/images/accueil/conception3.png" alt="Équipe">
+            <img loading="lazy" decoding="async" src="{% static 'images/accueil/conception3.png' %}" alt="Équipe">
             <p>Programmation et pilotage système</p>
         </div>
 
         <div class="expertises-item">
-            <img src="/static/images/accueil/conception4.png" alt="Équipe">
+            <img loading="lazy" decoding="async" src="{% static 'images/accueil/conception4.png' %}" alt="Équipe">
             <p>Suivi technique et SAV</p>
         </div>
     </div>
