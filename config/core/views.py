@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.core.mail import send_mail
 from django.shortcuts import redirect, render
 from django.urls import reverse
 
@@ -14,6 +15,38 @@ def contact(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
+            cleaned = form.cleaned_data
+            subject = f"[ATECMI] Nouvelle demande de contact — {cleaned.get('company', '').strip() or cleaned.get('name', '')}"
+            message = "\n".join(
+                [
+                    "Nouvelle demande depuis le formulaire de contact ATECMI",
+                    "",
+                    f"Nom: {cleaned.get('name', '')}",
+                    f"Société: {cleaned.get('company', '')}",
+                    f"Email: {cleaned.get('email', '')}",
+                    f"Téléphone: {cleaned.get('phone', '')}",
+                    "",
+                    "Message:",
+                    f"{cleaned.get('message', '')}",
+                    "",
+                    f"Consentement: {'Oui' if cleaned.get('consent') else 'Non'}",
+                ]
+            )
+
+            try:
+                send_mail(
+                    subject=subject,
+                    message=message,
+                    from_email=None,  # uses DEFAULT_FROM_EMAIL
+                    recipient_list=["melany.from@yahoo.com"],
+                )
+            except Exception:
+                messages.error(
+                    request,
+                    "Votre demande a bien été enregistrée, mais l’envoi email a échoué (configuration SMTP).",
+                )
+                return redirect(reverse("core:contact"))
+
             messages.success(
                 request,
                 "Merci, votre demande a bien été envoyée. Nous revenons vers vous sous 24–48h ouvrées.",
