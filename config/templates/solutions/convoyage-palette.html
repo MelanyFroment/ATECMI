@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Convoyage palette - ATECMI{% endblock %}
+
+{% block meta_description %}Convoyage palettes sur mesure : sécurisez la manutention, régulez vos flux et intégrez un convoyage robuste dans votre ligne. Expertise ATECMI (agroalimentaire).{% endblock %}
+
+{% block content %}
+<section class="hero-depalettisation">
+    <img src="{% static 'images/accueil/Photo_Convoyage_palettes .JPG' %}" alt="Convoyage palette" class="hero-img">
+    <div class="hero-content flex min-h-[105vh] flex-col justify-center py-16 text-white sm:min-h-[105vh] sm:py-20">
+        <p class="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold tracking-widest uppercase"><span class="h-2 w-2 rounded-full bg-[#60A5FA]"></span>Convoyage</p>
+        <h1 class="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">Convoyage palette : <br/>Sécurisez la manutention<br/>et les transferts</h1>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
+            ATECMI intègre des convoyeurs palettes (à rouleaux, à chaînes, transferts) adaptés à vos gabarits, vos charges
+            et vos contraintes de ligne.
+        </p>
+    </div>
+</section>
+
+<section class="features-depalettisation">
+    <h2 class="text-center">Convoyage palette <strong>fiable</strong> et <strong>sécurisé</strong></h2>
+    <div class="features-grid">
+        <div class="feature-text">
+            <h4>Des flux palettes continus, sans à-coups</h4>
+            <p>
+                Nous dimensionnons le convoyage selon les charges, la cadence, les zones d’accumulation, et les interfaces
+                (palettiseurs, filmeuses, magasins de palettes). Objectif : stabilité, sécurité, et disponibilité.
+            </p>
+            <p>Fonctions possibles :</p>
+            <ul>
+                <li>Accumulation et pas à pas</li>
+                <li>Transferts et rotations</li>
+                <li>Gestion des palettes vides/pleines</li>
+                <li>Sécurités et détection</li>
+            </ul>
+        </div>
+
+        <div class="feature-image">
+            <img src="{% static 'images/accueil/Photo_Convoyage_palettes .JPG' %}" alt="Convoyage palette">
+        </div>
+    </div>
+</section>
+
+<section class="features-video">
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="{% static 'video/accueil2.mp4' %}" type="video/mp4">
+    </video>
+</section>
+
+<section class="features-cascade">
+    <div class="cascade-row">
+        <div class="cascade-col text-col">
+            <h3>Intégration avec vos équipements</h3>
+            <p>
+                Les convoyeurs palettes sont intégrés comme une brique de ligne : interverrouillages, zones, priorités,
+                gestion des files et automatisme coordonné avec le reste de l’installation.
+            </p>
+            <ul>
+                <li>Synchronisation amont/aval</li>
+                <li>Gestion des priorités et des zones</li>
+                <li>Diagnostics et alarmes exploitables</li>
+            </ul>
+        </div>
+        <div class="cascade-col img-col">
+            <img src="{% static 'images/accueil/Photo_integration.JPG' %}" alt="Intégration">
+        </div>
+    </div>
+    <div class="cascade-row">
+        <div class="cascade-col img-col">
+            <img src="{% static 'images/accueil/modelisation_palettisation.png' %}" alt="Palettisation">
+        </div>
+        <div class="cascade-col text-col">
+            <h3>Un convoyage pensé pour la maintenance</h3>
+            <p>
+                Accès, robustesse, pièces d’usure, standardisation des composants : chaque choix vise à réduire les arrêts
+                et faciliter les interventions.
+            </p>
+            <ul>
+                <li>Maintenance facilitée</li>
+                <li>Conception robuste</li>
+                <li>Architecture évolutive</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="about-conclusion">
+    <h2>Pourquoi choisir ATECMI pour votre convoyage palette ?</h2>
+    <ul>
+        <li>Dimensionnement selon charges et cadences</li>
+        <li>Intégration complète dans votre ligne</li>
+        <li>Sécurité et diagnostics</li>
+        <li>Conception robuste et maintenable</li>
+    </ul>
+    <a class="cta" href="{% url 'core:contact' %}">Demander une étude</a>
+</section>
+{% endblock %}
