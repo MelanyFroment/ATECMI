@@ -1,23 +1,25 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Palettisation - ATECMI{% endblock %}
+{% block title %}Palettisation robotisée industrielle{% endblock %}
+
+{% block meta_description %}Solutions de palettisation robotisée jusqu’à 5 000 colis/heure. Automatisation industrielle sur mesure pour l’agroalimentaire.{% endblock %}
 
 {% block content %}
 <section class="hero-palettisation">
     <img src="{% static 'images/palettisation/Photo_haut_page_Palettisation.JPG' %}" alt="Palettisation" class="hero-img">
     <div class="hero-content flex min-h-[105vh] flex-col justify-center py-16 text-white sm:min-h-[105vh] sm:py-20">
         <p class="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold tracking-widest uppercase"><span class="h-2 w-2 rounded-full bg-[#fabc60]"></span>Palettisation</p>
-        <h1 class="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">Palettisation : <br/>Obtenez un meilleur<br/> rendement !</h1>
+        <h1 class="mt-5 font-semibold tracking-tight sm:text-5xl">Palettisation robotisée : <br/>Obtenez un meilleur<br/> rendement !</h1>
         <p class="mt-4 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">Atecmi conçoit pour vous des solutions<br/> de palettisation sur-mesure, adaptées à vos<br/> besoins et vos cadences.</p>
     </div>
 </section>
 
 <section class="features-palettisation">
-    <h2>Palettisation industrielle <strong>haute performance</strong></h2>
+    <h2 class="text-4xl">Palettisation industrielle <strong>haute performance</strong></h2>
     <div class="features-grid">
         <div class="feature-text">
-            <h4>Palettiseurs à transfert de couches – Gamme COPAL 5 à 25</h4>
+            <h3 class="text-base font-bold mt-10 mb-5">Palettiseurs à transfert de couches – Gamme COPAL 5 à 25</h3>
             <p>Nos <strong>palettiseurs à transfert de couches</strong> (gamme COPAL 5 à 25) couvrent un large spectre de configurations :</p>
             <ul>
                 <li>Simple entrée basse</li>
@@ -41,7 +43,7 @@
         </div>
 
         <div class="feature-image">
-            <img src="/static/images/accueil/modelisation_palettisation.png" alt="Dépalettisation">
+            <img src="{% static 'images/accueil/modelisation_palettisation.png' %}" alt="Dépalettisation">
         </div>
     </div>
 </section>
@@ -55,7 +57,7 @@
 <section class="features-cascade">
     <div class="cascade-row">
         <div class="cascade-col text-col">
-            <h3>Palettisation de barquettes à tenons (secteur laiterie)</h3>
+            <h3 class="text-base font-bold mt-10 mb-5">Palettisation de barquettes à tenons (secteur laiterie)</h3>
             <p>ATECMI propose des <strong>palettiseurs spécifiques pour barquettes à tenons</strong>, particulièrement adaptés au secteur laitier.</p>
             <p>Configurations possibles :</p>
             <ul>
@@ -74,7 +76,7 @@
             <img src="{% static 'images/palettisation/Photo_2_page_palettisation.JPG' %}" alt="Image 2">
         </div>
         <div class="cascade-col text-col">
-            <h3>Palettiseurs vrac à préhension</h3>
+            <h3 class="text-base font-bold mt-10 mb-5">Palettiseurs vrac à préhension</h3>
             <p>Nos solutions de <strong>palettisation “vrac” à préhension</strong> permettent la manipulation directe des produits.</p>
             <p>Applications principales :</p>
             <ul>
@@ -103,7 +105,7 @@
         <li>Solutions adaptées aux contraintes agroalimentaires</li>
         <li>Accompagnement de l’étude à la mise en service</li>
     </ul>
-    <a class="cta" href="#">Demander une étude</a>
+    <a class="cta" href="{% url 'core:contact' %}">Demander une étude gratuite</a>
 </section>
 
 
