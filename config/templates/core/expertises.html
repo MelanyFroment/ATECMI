@@ -10,51 +10,114 @@
 {% block content %}
 <section class="hero-section relative overflow-hidden bg-slate-950">
   <img class="absolute inset-0 h-full w-full object-cover opacity-90" src="{% static 'images/accueil/Photo_integration.JPG' %}" alt="Expertises ATECMI">
-  <div class="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/50 to-transparent"></div>
-  <div class="hero-content flex min-h-[105vh] flex-col justify-center py-16 text-white sm:min-h-[105vh] sm:py-20">
-    <h1 class="text-4xl font-semibold tracking-tight sm:text-6xl">Nos expertises</h1>
-    <p class="mt-5 max-w-2xl text-base text-white/80 sm:text-lg">Une maîtrise complète, de l’étude au SAV, pour des lignes industrielles performantes.</p>
-    <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-      <a class="btn-industrial-premium" href="{% url 'core:contact' %}">Demander une étude</a>
-      <a class="btn-industrial-outline" href="#contenu">Découvrir</a>
-    </div>
-  </div>
+  <div class="absolute inset-0 from-slate-950/85 via-slate-950/50 to-transparent"></div>
+  <div class="hero-content flex min-h-[105vh] flex-col items-center justify-center py-16 text-white sm:min-h-[105vh] sm:py-20">
+    <h1 class="text-center text-4xl font-semibold tracking-tight sm:text-6xl">Nos expertises</h1>
+    <p class="mt-5 max-w-2xl text-center text-base text-white/80 sm:text-lg">
+        Atecmi, un partenaire de confiance pour vos solutions industrielles.
+    </p>
+</div>
 </section>
 
 <section id="contenu" class="mx-auto max-w-6xl px-6 py-14">
-  <div class="grid gap-6 md:grid-cols-2">
-    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 class="text-xl font-semibold">Bureau d’étude</h2>
-      <p class="mt-2 text-sm text-slate-700"><strong>Description</strong> : analyse des besoins, contraintes process, objectifs cadence/qualité.</p>
-      <p class="mt-2 text-sm text-slate-700"><strong>Méthodologie</strong> : cadrage, relevés, itérations, validations.</p>
-      <p class="mt-2 text-sm text-slate-700"><strong>Process</strong> : ateliers, proposition, chiffrage, planning.</p>
-      <p class="mt-2 text-sm text-slate-700"><strong>Technologies</strong> : CAO, standards industriels, sécurité.</p>
-      <p class="mt-2 text-sm text-slate-700"><strong>Qualité</strong> : traçabilité, dossiers techniques, jalons.</p>
+  <h2 class="text-center text-4xl mb-5 mt-5">Une maîtrise globale de <strong>vos projets industriels</strong></h2>
+  <p>
+    <strong>ATECMI</strong> met à votre disposition une expertise complète en <strong>ingénierie industrielle</strong>, en <strong>transitique</strong> et en <strong>automatisation</strong>, afin de concevoir et intégrer des solutions sur mesure adaptées à vos lignes de production.
+  </p>
+  <p>
+    De l’étude à la maintenance, nos équipes vous accompagnent à chaque étape de votre projet pour garantir performance, fiabilité et évolutivité.
+  </p>
+</section>
+
+<section class="expertises-conclusion py-12">
+  <h2 class="mb-8 text-center text-3xl font-bold">Étude et implantation</h2>
+  <div class="col-sep-2 flex flex-col md:flex-row gap-8 items-center">
+    <div class="flex-1">
+      <h3 class="sousligne font-bold mb-5 mt-5">Analyse de vos besoins et optimisation des flux</h3>
+      <p><strong>ATECMI</strong> réalise des <strong>études techniques approfondies</strong> pour comprendre vos contraintes industrielles, vos flux logistiques et vos objectifs de production.</p>
+      <p>Nos prestations incluent :</p>
+      <ul>
+        <li>Analyse des flux et des cadences</li>
+        <li>Implantation des équipements sur plan</li>
+        <li>Optimisation des espaces de production</li>
+        <li>Proposition de solutions techniques adaptées</li>
+      </ul>
+      <p>
+        Objectif : concevoir une <strong>implantation industrielle optimisée</strong>, garantissant fluidité, sécurité et performance.
+      </p>
     </div>
-    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 class="text-xl font-semibold">Implantation</h2>
-      <p class="mt-2 text-sm text-slate-700"><strong>Description</strong> : implantation optimisée pour fluidifier les flux et faciliter la maintenance.</p>
-      <p class="mt-2 text-sm text-slate-700"><strong>Méthodologie</strong> : étude flux, interfaces machines, sécurité.</p>
-      <p class="mt-2 text-sm text-slate-700"><strong>Process</strong> : plans, revues techniques, préparation chantier.</p>
-      <p class="mt-2 text-sm text-slate-700"><strong>Technologies</strong> : layout, standards convoyage, capteurs.</p>
-      <p class="mt-2 text-sm text-slate-700"><strong>Qualité</strong> : conformité, accessibilité, robustesse.</p>
+    <div class="flex-1">
+      <img src="{% static 'images/accueil/modelisation_depalettisation.png' %}" alt="Dépalettisation">
+    </div> 
+  </div>
+
+  <h2 class="mb-8 text-center text-3xl font-bold">Conception - Bureau d’étude mécanique</h2>
+  <div class="col-sep-2 flex flex-col md:flex-row gap-8 items-center">
+    <div class="flex-1">
+      <img src="{% static 'images/accueil/modelisation_depalettisation.png' %}" alt="Dépalettisation">
+    </div> 
+    <div class="flex-1">
+      <h3 class="sousligne mb-5 mt-5 font-bold">Des solutions sur mesure adaptées à vos contraintes</h3>
+      <p> Notre <strong>bureau d’études mécanique</strong> conçoit des <strong>machines</strong> industrielles sur mesure</strong>, intégrant les dernières technologies en matière de convoyage et de manutention.</p>
+      <ul>
+        <li>Conception 3D des équipements</li>
+        <li>Dimensionnement mécanique</li>
+        <li>Intégration des contraintes produits et environnement</li>
+        <li>Validation technique des solutions</li>
+      </ul>
+      <p>
+        <strong>ATECMI</strong> développe des équipements robustes, durables et parfaitement adaptés à votre activité.
+      </p>
     </div>
-    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 class="text-xl font-semibold">Automatisme</h2>
-      <p class="mt-2 text-sm text-slate-700"><strong>Description</strong> : pilotage, régulation des flux, sécurité machine.</p>
-      <p class="mt-2 text-sm text-slate-700"><strong>Méthodologie</strong> : analyse fonctionnelle, architecture, tests.</p>
-      <p class="mt-2 text-sm text-slate-700"><strong>Process</strong> : FAT/SAT, mise en cadence, formation.</p>
-      <p class="mt-2 text-sm text-slate-700"><strong>Technologies</strong> : automates, variateurs, HMI.</p>
-      <p class="mt-2 text-sm text-slate-700"><strong>Qualité</strong> : stabilité, diagnosabilité, documentation.</p>
+  </div>
+
+  <h2 class="mb-8 text-center text-3xl font-bold">Programmation et pilotage systèmes</h2>
+  <div class="col-sep-2 flex flex-col md:flex-row gap-8 items-center">
+    <div class="flex-1">
+      <h3 class="sousligne mb-5 mt-5 font-bold">Une automatisation intelligente de vos lignes</h3>
+      <p> <strong>ATECMI</strong> assure le développement et l’intégration de <strong>solutions d’automatisme industriel</strong> pour piloter vos installations.</p>
+      <ul>
+        <li>Programmation d’automates (PLC)</li>
+        <li>Supervision des installations</li>
+        <li>Synchronisation des équipements</li>
+        <li>Optimisation des flux et des cadences</li>
+      </ul>
+      <p>
+        Nos systèmes garantissent une <strong>gestion fluide et automatisée</strong> de vos lignes de production, tout en améliorant la productivité et la traçabilité.
+      </p>
     </div>
-    <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 class="text-xl font-semibold">SAV</h2>
-      <p class="mt-2 text-sm text-slate-700"><strong>Description</strong> : support, maintenance, pièces, évolutions.</p>
-      <p class="mt-2 text-sm text-slate-700"><strong>Méthodologie</strong> : diagnostic, plan d’action, interventions.</p>
-      <p class="mt-2 text-sm text-slate-700"><strong>Process</strong> : suivi, recommandations, réactivité.</p>
-      <p class="mt-2 text-sm text-slate-700"><strong>Technologies</strong> : procédures, checklists, composants standard.</p>
-      <p class="mt-2 text-sm text-slate-700"><strong>Qualité</strong> : disponibilité, délais, traçabilité.</p>
+    <div class="flex-1">
+      <img src="{% static 'images/accueil/modelisation_depalettisation.png' %}" alt="Dépalettisation">
+    </div> 
+  </div>
+
+  <h2 class="mb-8 text-center text-3xl font-bold">Suivi technique et SAV</h2>
+  <div class="col-sep-2 flex flex-col md:flex-row gap-8 items-center">
+    <div class="flex-1">
+      <img src="{% static 'images/accueil/modelisation_depalettisation.png' %}" alt="Dépalettisation">
+    </div> 
+    <div class="flex-1">
+      <h3 class="sousligne mb-5 mt-5 font-bold">Un accompagnement durable de vos installations</h3>
+      <p><strong>ATECMI</strong> assure un <strong>suivi technique complet</strong> pour garantir la performance et la pérennité de vos équipements industriels.</p>
+      <ul>
+        <li>Assistance technique</li>
+        <li>Maintenance préventive et corrective</li>
+        <li>Interventions sur site</li>
+        <li>Optimisation continue des installations</li>
+      </ul>
+      <p>
+        Notre service après-vente réactif vous permet de sécuriser vos productions et de limiter les temps d’arrêt.
+      </p>
     </div>
+
+  </div>
+  <div class="marg ">
+    <p class="font-bold sousligne mb-5 mt-5">
+      Un partenaire unique pour vos projets industriels
+    </p>
+    <p>Avec ATECMI, vous bénéficiez d’un interlocuteur unique capable de piloter l’ensemble de votre projet, de la conception à l’exploitation.</p>
+    <p>👉 Une approche globale pour des solutions industrielles performantes, durables et adaptées à vos enjeux.</p>
+    <a class="cta" href="/contact/">Demander une étude gratuite</a>
   </div>
 </section>
 {% endblock %}
