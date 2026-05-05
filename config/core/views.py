@@ -69,3 +69,7 @@ def expertises(request):
 
 def mentions_legales(request):
     return render(request, "core/mentions_legales.html")
+
+
+def politique_confidentialite(request):
+    return render(request, "core/politique_confidentialite.html")

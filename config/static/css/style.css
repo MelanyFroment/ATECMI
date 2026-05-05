@@ -54,7 +54,7 @@ ul {
 
 
 /* NAVBAR */
-.navbar {position: fixed;top: 0;left: 0;width: 100%;z-index: 50;background: #0f2745cf;display: flex;justify-content: space-around;align-items: center;}
+.navbar {position: fixed;top: 0;left: 0;width: 100%;z-index: 50;background: #0f2745ee;display: flex;justify-content: space-around;align-items: center;}
 .navbar a {color: white;text-decoration: none;font-weight: 700;}
 /* .navbar ul {display: flex;align-items: center;gap: 50px;list-style: none;margin: 0;padding: 0;} */
 .navbar li.contact{background-color: #f2c94c;padding: 10px;}
@@ -733,8 +733,25 @@ html, body {overflow-x: hidden;}
     }
 }
 
+/* MENTION LEGALES */
+.mentions-legales {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 20vh;
+    overflow: hidden;
+}
+.mentions-legales-content strong {
+    position: relative;
+    display: inline-block;
+    background-image: linear-gradient(to right, #f2c94c 100%, transparent 0);
+    background-repeat: no-repeat;
+    background-size: 100% 4px;
+    background-position: 0 100%;
+    box-decoration-break: clone;
+    padding: 5px;
+}
 
- 
 /*** PAGE DEPALETTISATION ***/
 .hero-depalettisation {position: relative;height: 100vh;width: 100%;overflow: hidden;}
 .hero-depalettisation::before {content: "";position: absolute;inset: 0;background: rgba(0, 0, 0, 0);z-index: 1;}
