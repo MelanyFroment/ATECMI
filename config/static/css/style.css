@@ -369,7 +369,7 @@ a.linkedin i {color: #fff;font-size: 2rem; }
 section {position: relative;z-index: 1;}
 
 /* Section Features */
-.features {padding: 50px 90px;}
+.features {padding: 50px 40px;}
 .features h2 {margin-bottom: 30px;}
 .features h2 strong {position: relative;}
 .features h2 strong::after {content: "";position: absolute;left: 0;bottom: -5px; /* espace sous le texte */width: 100%;height: 4px;background-color: #f2c94c;}
