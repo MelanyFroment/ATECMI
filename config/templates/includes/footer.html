@@ -4,10 +4,10 @@
 
   <div class="footer-content">
     
-    <div class="footer-left">
+    <div class="footer-left flex flex-col items-center text-center">
         <a href="{% url 'core:home' %}"><img src="{% static 'images/logo.png' %}" alt="Logo"></a>
         
-        <p style="margin-top: 0;">5, Rue du Millénium<br>
+        <p class="mt-0 text-sm leading-relaxed text-white/90 md:text-base lg:text-lg xl:text-lg">5, Rue du Millénium<br>
             Z.A.C. de la croix rouge<br>
             59380 SOCX <br>
             03.28.20.29.20<br>
@@ -18,9 +18,9 @@
         </a>
     </div>
 
-    <div class="footer-links">
-        <h2>Nos solutions</h2>
-      <ul>
+    <div class="footer-links flex flex-col items-center text-center">
+        <h2 class="mb-7 text-lg font-semibold md:text-xl lg:text-2xl xl:text-2xl">Nos solutions</h2>
+      <ul class="text-sm leading-relaxed md:text-base lg:text-lg xl:text-lg">
         <li><a href="{% url 'solutions:depalettisation' %}">Dépalettisation</a></li>
         <li><a href="{% url 'solutions:convoyage_produit' %}">Convoyage produits unitaires</a></li>
         <li><a href="{% url 'solutions:encartonnage' %}">Encartonnage</a></li>
@@ -32,19 +32,18 @@
       </ul>
     </div>
 
-    <div class="footer-links">
-        <h2>Nos expertises</h2>
-      <ul>
-        <li>Étude et implantation optimisée</li>
-        <li>Conception sur mesure</li>
-        <li>Programmation et pilotage système</li>
-        <li>Suivi technique et SAV</li>
+    <div class="footer-links flex flex-col items-center text-center">
+        <h2 class="mb-7 text-lg font-semibold md:text-xl lg:text-2xl xl:text-2xl">Nos expertises</h2>
+      <ul class="text-sm leading-relaxed md:text-base lg:text-lg xl:text-lg">
+        <li><a href="{% url 'core:expertises' %}#etude">Étude et implantation optimisée</a></li>
+        <li><a href="{% url 'core:expertises' %}#conception">Conception sur mesure</a></li>
+        <li><a href="{% url 'core:expertises' %}#programmation">Programmation et pilotage système</a></li>
+        <li><a href="{% url 'core:expertises' %}#sav">Suivi technique et SAV</a></li>
       </ul>
     </div>
 
-    <div class="footer-links">
-      <ul>
-        <li><a href="{% url 'core:about' %}"><strong>À propos</strong></a></li>
+    <div class="footer-links flex flex-col items-center text-center">
+      <ul class="text-sm font-semibold leading-relaxed md:text-base lg:text-lg xl:text-lg">
         <li><a href="{% url 'blog:list' %}"><strong>Actualités</strong></a></li>
         <li><a href="{% url 'core:contact' %}"><strong>Contact</strong></a></li>
         <li><a href="{% url 'core:mentions_legales' %}"><strong>Mentions légales</strong></a></li>
@@ -54,5 +53,5 @@
 
   </div>
 
-  <p class="footer-bottom">&copy; 2026 ATECMI. Tous droits réservés.</p>
+  <p class="footer-bottom text-xs md:text-sm lg:text-base xl:text-base">&copy; 2026 ATECMI. Tous droits réservés.</p>
 </footer>

@@ -9,9 +9,9 @@
 <section class="hero-depalettisation">
     <img src="{% static 'images/accueil/Photo_solutions_robotisees.jpg' %}" alt="Solutions robotisées" class="hero-img">
     <div class="hero-content flex min-h-[105vh] flex-col justify-center py-16 text-white sm:min-h-[105vh] sm:py-20">
-        <p class="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold tracking-widest uppercase"><span class="h-2 w-2 rounded-full bg-[#f4fa60]"></span>Solutions</p>
-        <h1 class="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">Solutions robotisées : <br/>Performance, précision<br/>et flexibilité</h1>
-        <p class="mt-4 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
+        <p class="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold tracking-widest uppercase sm:text-xs md:text-sm"><span class="h-2 w-2 rounded-full bg-[#f4fa60]"></span>Solutions</p>
+        <h1 class="mt-5 max-w-[95vw] text-2xl font-semibold leading-[1.12] tracking-tight text-white sm:max-w-none sm:text-3xl md:text-4xl lg:text-[2.65rem] xl:text-5xl 2xl:text-6xl">Solutions robotisées : <br/>Performance, précision<br/>et flexibilité</h1>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg xl:text-xl 2xl:text-xl">
             ATECMI intègre des solutions robotisées pour automatiser vos opérations de fin de ligne, réduire la pénibilité
             et sécuriser la qualité, tout en maintenant vos cadences.
         </p>
@@ -19,10 +19,10 @@
 </section>
 
 <section class="features-depalettisation">
-    <h2 class="text-center">Robotisation <strong>industrielle</strong> orientée <strong>cadence</strong></h2>
+    <h2 class="mb-8 text-center text-xl font-semibold leading-snug tracking-tight text-slate-950 md:mb-12 md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-4xl">Robotisation <strong>industrielle</strong> orientée <strong>cadence</strong></h2>
     <div class="features-grid">
         <div class="feature-text">
-            <h4>Des cellules adaptées à vos produits et vos contraintes</h4>
+            <h4 class="mb-4 text-center text-base font-bold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">Des cellules adaptées à vos produits et vos contraintes</h4>
             <p>
                 Nous définissons l’architecture robot, les préhenseurs et les sécurités selon vos formats, votre cadence,
                 et votre implantation. L’objectif : une cellule fiable, réglable et exploitable.
@@ -51,7 +51,7 @@
 <section class="features-cascade">
     <div class="cascade-row">
         <div class="cascade-col text-col">
-            <h3>Préhension & changement de formats</h3>
+            <h3 class="text-base font-bold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">Préhension & changement de formats</h3>
             <p>
                 Préhenseurs conçus selon vos produits, avec une logique de changement de format pensée pour réduire les temps
                 d’arrêt et faciliter l’exploitation.
@@ -71,7 +71,7 @@
             <img src="{% static 'images/accueil/Photo_integration.JPG' %}" alt="Intégration de ligne">
         </div>
         <div class="cascade-col text-col">
-            <h3>Intégration complète & pilotage</h3>
+            <h3 class="text-base font-bold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">Intégration complète & pilotage</h3>
             <p>
                 Nous intégrons la robotisation dans votre ligne : convoyage, capteurs, sécurités, automatisme, diagnostics.
                 Une cellule robotisée n’est efficace que si le flux autour l’est aussi.
@@ -86,13 +86,15 @@
 </section>
 
 <section class="about-conclusion">
-    <h2>Pourquoi choisir ATECMI pour vos solutions robotisées ?</h2>
-    <ul>
-        <li>Cellules sur mesure orientées production</li>
-        <li>Préhension adaptée à vos produits</li>
-        <li>Intégration complète de la ligne</li>
-        <li>Suivi technique et SAV</li>
-    </ul>
+    <h2 class="text-lg font-bold leading-snug md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">Pourquoi choisir ATECMI pour vos solutions robotisées ?</h2>
+    <div class="flex justify-center">
+        <ul class="text-left text-base leading-relaxed md:text-lg xl:text-lg 2xl:text-xl list-disc list-inside space-y-2">
+            <li>Cellules sur mesure orientées production</li>
+            <li>Préhension adaptée à vos produits</li>
+            <li>Intégration complète de la ligne</li>
+            <li>Suivi technique et SAV</li>
+        </ul>
+    </div>
     <a class="cta" href="{% url 'core:contact' %}">Demander une étude</a>
 </section>
 {% endblock %}

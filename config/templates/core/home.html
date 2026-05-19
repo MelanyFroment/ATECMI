@@ -13,8 +13,8 @@
     </video>
     <div class="absolute inset-0 from-slate-950/85 via-slate-950/50 to-transparent"></div>
     <div class="relative text-white hero-content flex min-h-[105vh] flex-col justify-center py-16 text-white sm:min-h-[105vh] sm:py-20">
-        <h1 class="text-4xl font-semibold tracking-tight sm:text-6xl">Concepteur et<br>fabricant de vos<br>solutions sur mesure</h1>
-        <p class="mt-5 max-w-2xl text-base text-white/80 sm:text-lg">Depuis 1978, ATECMI conçoit vos chaînes complètes de conditionnement.</p>
+        <h1 class="max-w-[95vw] text-2xl font-semibold leading-[1.12] tracking-tight text-white sm:max-w-none sm:text-3xl md:text-4xl lg:text-[2.65rem] lg:leading-[1.08] xl:text-5xl 2xl:text-6xl">Concepteur et<br>fabricant de vos<br>solutions sur mesure</h1>
+        <p class="mt-5 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg xl:text-xl 2xl:text-xl">Depuis 1978, Atecmi conçoit vos chaînes complètes de conditionnement</p>
         <div class="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href="#solutions" class="btn-industrial-outline">Nos solutions</a>
             <a href="{% url 'core:contact' %}" class="btn-industrial-premium">Demander une étude</a>
@@ -23,7 +23,7 @@
 </section>
 
 <section class="features">
-    <h2 class="text-center">Ils nous font <strong>confiance</strong></h2>
+    <h2 class="text-center text-xl font-semibold leading-snug tracking-tight md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-4xl">Ils nous font <strong>confiance</strong></h2>
     <div class="logo-marquee" aria-label="Logos clients (défilement)">
         <div class="logo-track">
             <div class="logo-item"><img src="{% static 'images/accueil/serac.png' %}" alt="Serac"></div>
@@ -42,62 +42,62 @@
 </section>
 
 <section id="solutions" class="solutions">
-    <h2 class="text-center">Nos <strong>solutions</strong></h2>
+    <h2 class="text-center text-xl font-semibold leading-snug tracking-tight md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-4xl">Nos <strong>solutions</strong></h2>
 
     <div class="solutions-row">
         <a href="{% url 'solutions:depalettisation' %}" class="link-page">
-            <div class="solution-item">
+            <div class="solution-item flex flex-col items-center text-center">
                 <img loading="lazy" decoding="async" src="{% static 'images/accueil/modelisation_depalettisation.png' %}" alt="">
-                <p>Dépalettisation</p>
+                <p class="text-base font-semibold md:text-lg xl:text-lg 2xl:text-xl">Dépalettisation</p>
             </div>
         </a>
 
         <a href="{% url 'solutions:convoyage_produit' %}" class="link-page">
-            <div class="solution-item">
+            <div class="solution-item flex flex-col items-center text-center">
                 <img loading="lazy" decoding="async" src="{% static 'images/accueil/Photo_convoyage_produit_unitaire.jpg' %}" alt="">
-                <p>Convoyage produit unitaire</p>
+                <p class="text-base font-semibold md:text-lg xl:text-lg 2xl:text-xl">Convoyage produit unitaire</p>
             </div>
         </a>
 
         <a href="{% url 'solutions:encartonnage' %}" class="link-page">
-            <div class="solution-item">
+            <div class="solution-item flex flex-col items-center text-center">
                 <img loading="lazy" decoding="async" src="{% static 'images/accueil/modelisation_encartonnage.png' %}" alt="">
-                <p>Encartonnage</p>
+                <p class="text-base font-semibold md:text-lg xl:text-lg 2xl:text-xl">Encartonnage</p>
             </div>
         </a>
 
         <a href="{% url 'solutions:convoyage_colis' %}" class="link-page">
-            <div class="solution-item">
+            <div class="solution-item flex flex-col items-center text-center">
                 <img loading="lazy" decoding="async" src="{% static 'images/accueil/photo_convoyage_colis.JPG' %}" alt="">
-                <p>Convoyage colis</p>
+                <p class="text-base font-semibold md:text-lg xl:text-lg 2xl:text-xl">Convoyage colis</p>
             </div>
         </a>
 
         <a href="{% url 'solutions:palettisation' %}" class="link-page">
-            <div class="solution-item">
+            <div class="solution-item flex flex-col items-center text-center">
                 <img loading="lazy" decoding="async" src="{% static 'images/accueil/modelisation_palettisation.png' %}" alt="">
-                <p>Palettisation</p>
+                <p class="text-base font-semibold md:text-lg xl:text-lg 2xl:text-xl">Palettisation</p>
             </div>
         </a>
 
         <a href="{% url 'solutions:integration' %}" class="link-page">
-            <div class="solution-item">
+            <div class="solution-item flex flex-col items-center text-center">
                 <img loading="lazy" decoding="async" src="{% static 'images/accueil/Photo_integration.JPG' %}" alt="">
-                <p>Intégration</p>
+                <p class="text-base font-semibold md:text-lg xl:text-lg 2xl:text-xl">Intégration</p>
             </div>
         </a>
 
         <a href="{% url 'solutions:convoyage_palette' %}" class="link-page">
-            <div class="solution-item">
+            <div class="solution-item flex flex-col items-center text-center">
                 <img loading="lazy" decoding="async" src="{% static 'images/accueil/Photo_Convoyage_palettes .JPG' %}" alt="">
-                <p>Convoyage palette</p>
+                <p class="text-base font-semibold md:text-lg xl:text-lg 2xl:text-xl">Convoyage palette</p>
             </div>
         </a>
 
         <a href="{% url 'solutions:solutions_robotisees' %}" class="link-page">
-            <div class="solution-item">
+            <div class="solution-item flex flex-col items-center text-center">
                 <img loading="lazy" decoding="async" src="{% static 'images/accueil/Photo_solutions_robotisees.jpg' %}" alt="">
-                <p>Solutions robotisées</p>
+                <p class="text-base font-semibold md:text-lg xl:text-lg 2xl:text-xl">Solutions robotisées</p>
             </div>
         </a>
     </div>
@@ -108,44 +108,44 @@
 
     <div class="highlight-content">
         <div class="highlight-item">
-            <h3><span class="count-up" data-count="45">0</span> <strong>+</strong></h3>
-            <p>ans d’expérience</p>
+            <h3 class="text-3xl font-semibold tabular-nums sm:text-4xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl"><span class="count-up" data-count="45">0</span> <strong>+</strong></h3>
+            <p class="text-xs font-light uppercase tracking-wider text-white/90 sm:text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-xl">ans d’expérience</p>
         </div>
 
         <div class="highlight-item">
-            <h3><span class="count-up" data-count="250">0</span> <strong>+</strong></h3>
-            <p>clients industriels</p>
+            <h3 class="text-3xl font-semibold tabular-nums sm:text-4xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl"><span class="count-up" data-count="250">0</span> <strong>+</strong></h3>
+            <p class="text-xs font-light uppercase tracking-wider text-white/90 sm:text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-xl">clients industriels</p>
         </div>
 
         <div class="highlight-item">
-            <h3><span class="count-up" data-count="40">0</span> <strong>+</strong></h3>
-            <p>collaborateurs</p>
+            <h3 class="text-3xl font-semibold tabular-nums sm:text-4xl md:text-4xl lg:text-5xl xl:text-5xl 2xl:text-6xl"><span class="count-up" data-count="40">0</span> <strong>+</strong></h3>
+            <p class="text-xs font-light uppercase tracking-wider text-white/90 sm:text-sm md:text-base lg:text-lg xl:text-lg 2xl:text-xl">collaborateurs</p>
         </div>
     </div>
 </section>
 
 <section class="expertises">
-    <h2 class="text-center">Nos <strong>expertises</strong></h2>
-    <p>Atecmi vous accompagne dans votre projet de A à Z</p>
+    <h2 class="text-center text-xl font-semibold leading-snug tracking-tight md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-4xl">Nos <strong>expertises</strong></h2>
+    <p class="text-base leading-relaxed md:text-lg xl:text-lg 2xl:text-lg">Atecmi vous accompagne dans votre projet de A à Z</p>
     <div class="expertises-content">
         <div class="expertises-item">
             <img loading="lazy" decoding="async" src="{% static 'images/accueil/conception1.png' %}" alt="Expérience">
-            <p>Étude et implantation optimisée </p>
+            <p class="text-base font-semibold leading-snug md:text-lg xl:text-lg 2xl:text-xl">Étude et implantation optimisée </p>
         </div>
 
         <div class="expertises-item">
             <img loading="lazy" decoding="async" src="{% static 'images/accueil/conception2.png' %}" alt="Clients">
-            <p>Conception sur mesure</p>
+            <p class="text-base font-semibold leading-snug md:text-lg xl:text-lg 2xl:text-xl">Conception sur mesure</p>
         </div>
 
         <div class="expertises-item">
             <img loading="lazy" decoding="async" src="{% static 'images/accueil/conception3.png' %}" alt="Équipe">
-            <p>Programmation et pilotage système</p>
+            <p class="text-base font-semibold leading-snug md:text-lg xl:text-lg 2xl:text-xl">Programmation et pilotage système</p>
         </div>
 
         <div class="expertises-item">
             <img loading="lazy" decoding="async" src="{% static 'images/accueil/conception4.png' %}" alt="Équipe">
-            <p>Suivi technique et SAV</p>
+            <p class="text-base font-semibold leading-snug md:text-lg xl:text-lg 2xl:text-xl">Suivi technique et SAV</p>
         </div>
     </div>
 </section>

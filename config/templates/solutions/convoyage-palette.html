@@ -9,16 +9,16 @@
 <section class="hero-depalettisation">
     <img src="{% static 'images/convoyage_palette/photo_haut_page_convoyage_palette.JPG' %}" alt="Convoyage palette" class="hero-img">
     <div class="hero-content flex min-h-[105vh] flex-col justify-center py-16 text-white sm:min-h-[105vh] sm:py-20">
-        <p class="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold tracking-widest uppercase"><span class="h-2 w-2 rounded-full bg-[#60A5FA]"></span>Convoyage</p>
-        <h1 class="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">Convoyage palette : <br/>Votre solution manutention </h1>
-        <p class="mt-4 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
+        <p class="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold tracking-widest uppercase sm:text-xs md:text-sm"><span class="h-2 w-2 rounded-full bg-[#60A5FA]"></span>Convoyage</p>
+        <h1 class="mt-5 max-w-[95vw] text-2xl font-semibold leading-[1.12] tracking-tight text-white sm:max-w-none sm:text-3xl md:text-4xl lg:text-[2.65rem] xl:text-5xl 2xl:text-6xl">Convoyage palette : <br/>Votre solution manutention </h1>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg xl:text-xl 2xl:text-xl">
             Atecmi vous aide à optimiser et gérer les flux logistiques de vos charges lourdes.
         </p>
     </div>
 </section>
 
 <section class="features-depalettisation">
-    <h2 class="text-center text-4xl">Des solutions de convoyage adaptées <strong>à vos besoins</strong></h2>
+    <h2 class="mb-8 text-center text-xl font-semibold leading-snug tracking-tight text-slate-950 md:mb-12 md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-4xl">Des solutions de convoyage adaptées <strong>à vos besoins</strong></h2>
     <p>
         <strong>ATECMI</strong> conçoit des solutions de <strong>convoyage de palettes automatisé</strong> permettant d’optimiser les flux logistiques, de sécuriser le transport des charges lourdes et d’améliorer la productivité de vos lignes de production.
     </p>
@@ -47,7 +47,7 @@
 <section class="features-cascade">
     <div class="cascade-row">
         <div class="cascade-col text-col">
-            <h3 class="sousligne font-semibold mb-4">Une intégration complète dans vos lignes industrielles</h3>
+            <h3 class="sousligne mb-4 text-base font-semibold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">Une intégration complète dans vos lignes industrielles</h3>
             <p>
                 <strong>ATECMI</strong> assure l’intégration complète de vos systèmes de <strong>manutention de palettes</strong> :
             </p>
@@ -69,7 +69,7 @@
             <img src="{% static 'images/convoyage_palette/image_2_page_convoyage_palette.jpg' %}" alt="Palettisation">
         </div>
         <div class="cascade-col text-col">
-            <h3 class="sousligne font-semibold mb-4">Des équipements robustes et durables</h3>
+            <h3 class="sousligne mb-4 text-base font-semibold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">Des équipements robustes et durables</h3>
             <p>
                 Les convoyeurs de palettes ATECMI sont conçus pour une utilisation intensive :
             </p>
@@ -84,7 +84,7 @@
     <div class="cascade-row"> 
         
         <div class="cascade-col text-col">
-            <h3 class="sousligne font-semibold mb-4">Optimisation des flux logistiques</h3>
+            <h3 class="sousligne mb-4 text-base font-semibold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">Optimisation des flux logistiques</h3>
             <p>
                 Les solutions de convoyage de palettes permettent de :
             </p>
@@ -102,14 +102,16 @@
 </section>
 
 <section class="about-conclusion">
-    <h2>Pourquoi choisir ATECMI pour le convoyage de palettes ?</h2> 
-    <ul>
-        <li>Solutions de convoyage industriel sur mesure</li>
-        <li>Expertise en transitique et automatisation</li>
-        <li>Intégration complète de lignes logistiques</li>
-        <li>Fiabilité et robustesse des équipements</li>
-        <li>Adaptation à tous types de palettes et secteurs industriels</li>
-    </ul>
+    <h2 class="text-lg font-bold leading-snug md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">Pourquoi choisir ATECMI pour le convoyage de palettes ?</h2> 
+    <div class="flex justify-center">
+        <ul class="text-left text-base leading-relaxed md:text-lg xl:text-lg 2xl:text-xl list-disc list-inside space-y-2">
+            <li>Solutions de convoyage industriel sur mesure</li>
+            <li>Expertise en transitique et automatisation</li>
+            <li>Intégration complète de lignes logistiques</li>
+            <li>Fiabilité et robustesse des équipements</li>
+            <li>Adaptation à tous types de palettes et secteurs industriels</li>
+        </ul>
+    </div>
     <a class="cta" href="{% url 'core:contact' %}">Demander une étude</a>
 </section>
 {% endblock %}

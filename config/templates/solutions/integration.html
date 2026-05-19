@@ -7,16 +7,16 @@
 <section class="hero-depalettisation">
     <img src="{% static 'images/integration/Banderoleuse_page_Intégration.JPG' %}" alt="Intégration industrielle" class="hero-img">
     <div class="hero-content flex min-h-[105vh] flex-col justify-center py-16 text-white sm:min-h-[105vh] sm:py-20">
-        <p class="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold tracking-widest uppercase"><span class="h-2 w-2 rounded-full bg-[#6bfa60]"></span>Integration</p>
-        <h1 class="mt-5 text-4xl font-semibold tracking-tight sm:text-5xl">Intégration : <br/>Choisissez la solution <br/>clés en main !</h1>
-        <p class="mt-4 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg">
+        <p class="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold tracking-widest uppercase sm:text-xs md:text-sm"><span class="h-2 w-2 rounded-full bg-[#6bfa60]"></span>Integration</p>
+        <h1 class="mt-5 max-w-[95vw] text-2xl font-semibold leading-[1.12] tracking-tight text-white sm:max-w-none sm:text-3xl md:text-4xl lg:text-[2.65rem] xl:text-5xl 2xl:text-6xl">Intégration : <br/>Choisissez la solution <br/>clés en main !</h1>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg xl:text-xl 2xl:text-xl">
             Atecmi vous propose son expertise complète <br/>pour des lignes de production clés en main.
         </p>
     </div>
 </section>
 
 <section class="features-depalettisation">
-    <h2 class="text-center text-4xl">Une solution complète,<strong> un seul partenaire</strong></h2>
+    <h2 class="mb-8 text-center text-xl font-semibold leading-snug tracking-tight text-slate-950 md:mb-12 md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-4xl">Une solution complète,<strong> un seul partenaire</strong></h2>
     <p class="text-center"><strong>ATECMI</strong> accompagne les industriels dans la conception et l’intégration de <strong>solutions complètes de lignes de production</strong>, en combinant ses propres équipements avec des machines complémentaires issues de partenaires reconnus.</p>
     <p>Dans une logique de performance globale, nous intégrons des équipements tels que :</p>
     <ul>
@@ -35,7 +35,7 @@
 <section class="features-cascade">
     <div class="cascade-row">
         <div class="cascade-col text-col">
-            <h3 class=" mt-5 mb-5 sousligne"><strong>Le choix de partenaires de confiance</strong></h3>
+            <h3 class="mb-5 mt-5 text-base font-bold leading-snug sousligne md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl"><strong>Le choix de partenaires de confiance</strong></h3>
             <p>Parce que chaque détail compte, ATECMI s’appuie sur des partenaires technologiques reconnus.</p>
             <p>Toutes les machines intégrées sont testées et validées pour garantir leur compatibilité avec vos contraintes.</p>
             <p>ATECMI s’assure que chaque équipement :</p>
@@ -54,7 +54,7 @@
             <img src="{% static 'images/integration/ricard_peseuse_ejecteur.JPG' %}" alt="Image 2">
         </div>
         <div class="cascade-col text-col">
-            <h2 class="mb-5 mt-5 sousligne"><strong>Une intégration pensée pour la performance</strong></h2>
+            <h2 class="mb-5 mt-5 text-base font-bold leading-snug sousligne md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl"><strong>Une intégration pensée pour la performance</strong></h2>
             <p>Notre objectif : vous livrer une ligne clé en main, performante et fiable.</p>
             <p>ATECMI prend en charge :</p>
             <ul>
@@ -74,13 +74,15 @@
 </section>
 
 <section class="about-conclusion">
-    <h2>Pourquoi choisir ATECMI pour votre ligne complète ?</h2>
-    <ul>
-        <li>Un interlocuteur unique pour l’ensemble de votre projet</li>
-        <li>Des équipements sélectionnés auprès de partenaires de confiance</li>
-        <li>Une parfaite maîtrise des flux, cadences et contraintes techniques</li>
-        <li>Une intégration optimisée pour maximiser votre productivité</li>
-    </ul>
+    <h2 class="text-lg font-bold leading-snug md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">Pourquoi choisir ATECMI pour votre ligne complète ?</h2>
+    <div class="flex justify-center">
+        <ul class="text-left text-base leading-relaxed md:text-lg xl:text-lg 2xl:text-xl list-disc list-inside space-y-2">
+            <li>Un interlocuteur unique pour l’ensemble de votre projet</li>
+            <li>Des équipements sélectionnés auprès de partenaires de confiance</li>
+            <li>Une parfaite maîtrise des flux, cadences et contraintes techniques</li>
+            <li>Une intégration optimisée pour maximiser votre productivité</li>
+        </ul>
+    </div>
     <a class="cta" href="{% url 'core:contact' %}">Demander une étude</a>
 </section>
 {% endblock %}

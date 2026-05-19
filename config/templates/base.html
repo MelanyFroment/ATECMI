@@ -21,7 +21,7 @@
 
     {% include "includes/navbar.html" %}
 
-    <main>
+    <main class="text-base leading-relaxed text-slate-900 antialiased xl:text-lg xl:leading-relaxed 2xl:text-lg">
         {% block content %}{% endblock %}
     </main>
 
@@ -29,9 +29,9 @@
 
     <div id="cookieBanner" class="hidden fixed inset-x-0 bottom-0 z-50 p-4">
       <div class="mx-auto max-w-6xl rounded-2xl border border-slate-200 bg-white/95 p-4 shadow-xl backdrop-blur sm:flex sm:items-center sm:justify-between sm:gap-6">
-        <div class="text-sm text-slate-700">
+        <div class="text-sm text-slate-700 sm:text-base">
           <p class="font-semibold text-slate-900">Cookies</p>
-          <p class="mt-1 text-xs leading-relaxed text-slate-600">
+          <p class="mt-1 text-xs leading-relaxed text-slate-600 sm:text-sm">
             Nous utilisons des cookies pour mesurer l’audience et améliorer l’expérience.
             <a class="font-semibold text-slate-900 underline underline-offset-4" href="{% url 'core:mentions_legales' %}">Mentions légales</a>.
           </p>
