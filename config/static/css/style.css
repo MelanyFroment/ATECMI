@@ -958,19 +958,28 @@ html, body {overflow-x: hidden;}
     box-decoration-break: clone;
     padding: 5px;
 }
-.expertises-conclusion h2{
+/* ============================================================
+   SECTION CONCLUSION EXPERTISES (PC FIRST)
+   ============================================================ */
+
+/* Style par défaut (Desktop / PC) */
+.expertises-conclusion h2 {
     text-align: center;
     background-image: linear-gradient(to bottom, #04234ac7, #4a5274, #8687a0, #c2c1ce, #ffffff);
     padding: 24px;
     color: #fff;
     font-weight: 700;
+    font-size: 2rem; /* Taille de base PC */
 }
+
 .expertises-conclusion .col-sep-2 {
     padding: 30px 90px;
-} 
+}
+
 .expertises-conclusion .marg {
     margin: 30px 90px;
 }
+
 .expertises-conclusion .cta {
     background: #f2c94c;
     color: #0e2643;
@@ -979,11 +988,67 @@ html, body {overflow-x: hidden;}
     border: none;
     cursor: pointer;
     font-weight: 900;
-    font-size: clamp(0.8rem, 2vw, 0.8rem);
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem); /* Ajusté pour être plus lisible */
     display: block;
-    margin: 30px auto 30px;
+    margin: 40px auto;
     width: fit-content;
     text-decoration: none;
     border-radius: 5px;
     text-align: center;
+    transition: transform 0.2s ease;
+}
+
+.expertises-conclusion .cta:hover {
+    transform: scale(1.05);
+}
+
+/* ============================================================
+   GRANDS ÉCRANS (Dès 1440px)
+   ============================================================ */
+@media (min-width: 1440px) {
+    .expertises-conclusion .col-sep-2,
+    .expertises-conclusion .marg {
+        margin: 40px 150px; /* On aère encore plus sur les très grands écrans */
+        padding: 40px 150px;
+    }
+    
+    .expertises-conclusion h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* ============================================================
+   TABLETTE (Sous 1024px)
+   ============================================================ */
+@media (max-width: 1024px) {
+    .expertises-conclusion .col-sep-2 {
+        padding: 30px 60px;
+    }
+
+    .expertises-conclusion .marg {
+        margin: 30px 60px;
+    }
+}
+
+/* ============================================================
+   MOBILE (Sous 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+    .expertises-conclusion h2 {
+        padding: 20px 15px;
+        font-size: 1.5rem; /* Titre plus petit pour mobile */
+    }
+
+    .expertises-conclusion .col-sep-2 {
+        padding: 20px 40px; /* Ton souhait de marge/padding réduit */
+    }
+
+    .expertises-conclusion .marg {
+        margin: 30px 40px; /* Appliqué selon ta demande */
+    }
+
+    .expertises-conclusion .cta {
+        width: 80%; /* Le bouton prend plus de place sur mobile pour faciliter le clic */
+        margin: 30px auto;
+    }
 }
