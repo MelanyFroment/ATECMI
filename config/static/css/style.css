@@ -928,7 +928,7 @@ html, body {overflow-x: hidden;}
 .hero-encartonnage::before {content: "";position: absolute;inset: 0;background: rgba(0, 0, 0, 0.4);z-index: 1;}
 .hero-encartonnage .hero-img {position: absolute;inset: 0;width: 100%;height: 100%;object-fit: cover;}
 
-.features-encartonnage {padding: 0px 90px;}
+.features-encartonnage {padding: 0px 40px;}
 .features-encartonnage h2 {text-align: left;}
 .features-encartonnage h2 strong {position: relative;}
 .features-encartonnage h2 strong {position: relative;display: inline-block;background-image: linear-gradient(to right, #f2c94c 100%, transparent 0);background-repeat: no-repeat;background-size: 100% 4px;background-position: 0 100%;box-decoration-break: clone;}
@@ -936,9 +936,7 @@ html, body {overflow-x: hidden;}
 .features-encartonnage .feature-image {display: flex;justify-content: center;align-items: center;}
 .features-encartonnage .feature-image img {width: 100%;max-width: 550px;height: auto;object-fit: cover;border-radius: 10px;}
 
-.features-encartonnage2 {
-    padding: 40px 41px;
-}
+.features-encartonnage2 {padding: 40px 40px;}
 .features-encartonnage2 h2 {text-align: left;margin-bottom: 50px;}
 .features-encartonnage2 h2 strong {position: relative;}
 .features-encartonnage2 h2 strong {position: relative;display: inline-block;background-image: linear-gradient(to right, #f2c94c 100%, transparent 0);background-repeat: no-repeat;background-size: 100% 4px;background-position: 0 100%;box-decoration-break: clone; padding: 0 0 10px 0;}
