@@ -1,0 +1,13 @@
+/* expertises.css */
+.hero-section { min-height: 78vh; }
+.btn-industrial-premium { background:#f2c94c; color:#0b1220; border-radius:14px; padding:14px 18px; font-weight:800; display:inline-flex; align-items:center; justify-content:center; }
+#contenu strong{
+    position: relative;
+    display: inline-block;
+    background-image: linear-gradient(to right, #f2c94c 100%, transparent 0);
+    background-repeat: no-repeat;
+    background-size: 100% 4px;
+    background-position: 0 100%;
+    box-decoration-break: clone;
+    padding: 5px;
+}

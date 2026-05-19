@@ -937,7 +937,7 @@ html, body {overflow-x: hidden;}
 .features-encartonnage .feature-image img {width: 100%;max-width: 550px;height: auto;object-fit: cover;border-radius: 10px;}
 
 .features-encartonnage2 {
-    padding: 40px 41px;
+    padding: 40px 40px;
 }
 .features-encartonnage2 h2 {text-align: left;margin-bottom: 50px;}
 .features-encartonnage2 h2 strong {position: relative;}
