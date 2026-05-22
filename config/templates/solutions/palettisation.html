@@ -5,6 +5,11 @@
 
 {% block meta_description %}Solutions de palettisation robotisée jusqu’à 5 000 colis/heure. Automatisation industrielle sur mesure pour l’agroalimentaire.{% endblock %}
 
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/solutions-common.css' %}">
+<link rel="stylesheet" href="{% static 'css/palettisation.css' %}">
+{% endblock %}
+
 {% block content %}
 <section class="hero-palettisation">
     <img src="{% static 'images/palettisation/Photo_haut_page_Palettisation.JPG' %}" alt="Palettisation" class="hero-img">

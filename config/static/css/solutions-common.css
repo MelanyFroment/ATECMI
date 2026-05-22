@@ -1,0 +1,22 @@
+/**
+ * ATECMI — Solutions partageant hero-depalettisation + features-depalettisation
+ * (dépalettisation, convoyage colis/palette, intégration, robotisées)
+ */
+
+.features-depalettisation {
+    padding: 60px 90px;
+}
+
+.features-depalettisation h2 {
+    margin-bottom: 50px;
+}
+
+.features-depalettisation .feature-text h4 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.features-depalettisation .feature-text p {
+    line-height: 1.7;
+    text-align: justify;
+}

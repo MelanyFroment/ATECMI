@@ -3,6 +3,11 @@
 
 {% block title %}Actualités - ATECMI{% endblock %}
 
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'css/legal.css' %}">
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock %}
+
 {% block content %}
 <section class="hero-actualite">
   <img src="{% static 'images/actualite/photo_haut_page_actu.JPG' %}" alt="Background" class="bg-image">

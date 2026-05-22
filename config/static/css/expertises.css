@@ -1,13 +1,58 @@
-/* expertises.css */
-.hero-section { min-height: 78vh; }
-.btn-industrial-premium { background:#f2c94c; color:#0b1220; border-radius:14px; padding:14px 18px; font-weight:800; display:inline-flex; align-items:center; justify-content:center; }
-#contenu strong{
-    position: relative;
-    display: inline-block;
-    background-image: linear-gradient(to right, #f2c94c 100%, transparent 0);
-    background-repeat: no-repeat;
-    background-size: 100% 4px;
-    background-position: 0 100%;
-    box-decoration-break: clone;
-    padding: 5px;
+/**
+ * ATECMI — Page Expertises (expertises.html)
+ */
+
+.expertises-conclusion h2 {
+    text-align: center;
+    background-image: linear-gradient(to bottom, #04234ac7, #4a5274, #8687a0, #c2c1ce, #ffffff);
+    padding: 24px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.expertises-conclusion .col-sep-2 {
+    padding: 30px 90px;
+}
+
+.expertises-conclusion .marg {
+    margin: 30px 90px;
+}
+
+.expertises-conclusion .cta {
+    background: #f2c94c;
+    color: #0e2643;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: clamp(0.8rem, 2vw, 1.2rem) clamp(1.5rem, 4vw, 2.5rem);
+    border: none;
+    cursor: pointer;
+    font-weight: 900;
+    font-size: clamp(0.8rem, 2vw, 0.8rem);
+    display: block;
+    margin: 30px auto 30px;
+    width: fit-content;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* ——— Tablette ——— */
+@media (max-width: 1024px) {
+    .expertises-conclusion .col-sep-2 {
+        padding: 30px 50px;
+    }
+
+    .expertises-conclusion .marg {
+        margin: 30px 50px;
+    }
+}
+
+/* ——— Mobile ——— */
+@media (max-width: 768px) {
+    .expertises-conclusion .col-sep-2 {
+        padding: 20px 24px;
+    }
+
+    .expertises-conclusion .marg {
+        margin: 20px 24px;
+    }
 }

@@ -1,0 +1,162 @@
+/**
+ * ATECMI — Page À propos (about.html)
+ */
+
+.hero-about {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-about::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgb(0 0 0 / 16%);
+    z-index: 1;
+}
+
+.hero-about-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about {
+    padding: 60px 90px;
+}
+
+.about h1 strong {
+    position: relative;
+}
+
+.about h1 strong::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 4px;
+    background-color: #f2c94c;
+}
+
+.about p {
+    text-align: justify;
+}
+
+.about-part2 {
+    padding: 60px 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.about-part2 .about-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-part2 .about-col {
+    flex: 1;
+}
+
+.about-part2 .about-col img {
+    width: 70%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.about-part2 .text-col p {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.about-part2 .img-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-part2 .img-col img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ——— Tablette ——— */
+@media (max-width: 1024px) {
+    .hero-about-buttons {
+        gap: 15px;
+    }
+
+    .hero-about-buttons button {
+        font-size: 0.95rem;
+        padding: 12px 20px;
+    }
+
+    .about {
+        padding: 50px 40px;
+    }
+
+    .about-part2 {
+        padding: 50px 40px;
+        gap: 50px;
+    }
+
+    .about-row {
+        gap: 30px;
+    }
+}
+
+/* ——— Mobile ——— */
+@media (max-width: 768px) {
+    .hero-about-content {
+        padding: 0 20px;
+    }
+
+    .hero-about-buttons {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .hero-about-buttons button {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+
+    .about {
+        padding: 50px 40px;
+    }
+
+    .about p {
+        text-align: justify;
+    }
+
+    .about-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-part2 .about-col img {
+        width: 100%;
+    }
+}
+
+/* ——— PC / Grand écran ——— */
+@media (min-width: 1400px) {
+    .hero-about-buttons button {
+        font-size: 0.8rem;
+        padding: 16px 30px;
+    }
+
+    .about {
+        padding: 60px 90px;
+    }
+}

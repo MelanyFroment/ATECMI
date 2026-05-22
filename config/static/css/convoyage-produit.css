@@ -1,0 +1,24 @@
+/**
+ * ATECMI — Convoyage produit unitaire (convoyage-produit.html)
+ */
+
+.features-convoyage_produit {
+    padding: 60px 90px;
+}
+
+.features-convoyage_produit h2 {
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.features-convoyage_produit p {
+    line-height: 1.7;
+    margin: 15px 0 0 0;
+}
+
+/* ——— Mobile ——— */
+@media (max-width: 768px) {
+    .features-convoyage_produit {
+        padding: 60px 40px;
+    }
+}
