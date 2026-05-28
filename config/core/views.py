@@ -4,6 +4,7 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 
 from .forms import ContactForm
+from .models import ContactMessage
 
 def home(request):
     return render(request, "core/home.html")
@@ -16,6 +17,16 @@ def contact(request):
         form = ContactForm(request.POST)
         if form.is_valid():
             cleaned = form.cleaned_data
+            ContactMessage.objects.create(
+                name=cleaned.get("name", ""),
+                company=cleaned.get("company", ""),
+                email=cleaned.get("email", ""),
+                phone=cleaned.get("phone", ""),
+                message=cleaned.get("message", ""),
+                consent=bool(cleaned.get("consent")),
+                ip_address=request.META.get("REMOTE_ADDR"),
+                user_agent=(request.META.get("HTTP_USER_AGENT") or "")[:512],
+            )
             subject = f"[ATECMI] Nouvelle demande de contact — {cleaned.get('company', '').strip() or cleaned.get('name', '')}"
             message = "\n".join(
                 [
