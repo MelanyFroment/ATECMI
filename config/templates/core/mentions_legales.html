@@ -2,90 +2,184 @@
 {% load static %}
 
 {% block title %}Mentions légales - ATECMI{% endblock %}
-{% block meta_description %}Mentions légales, informations cookies et traitement des données pour le site ATECMI.{% endblock %}
+{% block meta_description %}Mentions légales et conditions générales d'utilisation du site ATECMI.{% endblock %}
 
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'css/legal.css' %}">
 {% endblock %}
 
 {% block content %}
-<section class="hero-actualite mentions-legales"> 
+<section class="hero-actualite mentions-legales">
   <div class="hero-actualite-content flex flex-col items-center">
     <img src="/static/images/Logo-04.png" alt="ATECMI" class="hero-logo mb-4">
   </div>
 </section>
-<section class="mentions-legales-content mx-auto max-w-4xl px-6 mb-10 text-base leading-relaxed text-slate-800 xl:text-lg 2xl:text-lg">
-  <div>
+
+<section class="mentions-legales-content mx-auto max-w-4xl px-6 pb-16 text-base leading-relaxed text-slate-800 xl:text-lg 2xl:text-lg">
+  <div class="space-y-6 mt-10">
     <h1 class="mt-10 text-center text-2xl font-semibold tracking-tight text-slate-950 md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-5xl"><strong>Mentions légales</strong></h1>
-      <h3 class="text-slate-950 sousligne mt-5 mb-5 text-base font-semibold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">1. Éditeur du site</h3>
-      <p class="mt-4 text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
-      Le présent site est édité par :
-      ATECMI
-      Société SAS au capital de 4000 euros<br>
-      Siège social : 5, Rue du millénium, Z.A.C. de la croix rouge, 59380 SOCX<br>
-      Immatriculée au RCS de DUNKERQUE sous le numéro 313 285 181<br>
-      Numéro de TVA intracommunautaire : FR 51 313 285 181 <br>
-      Téléphone : 03.28.20.29.20<br>
-      Email : contact@atecmi.com<br>
-      Directeur de la publication : <br>
+    <article class="space-y-6">
+      <section class="space-y-4">
+        <h1 class="text-slate-950 sousligne text-base font-semibold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">
+          Éditeur du site
+        </h1>
+        <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          Le présent site est édité par :
+        </p>
+        <div class="space-y-1">
+          <p class="font-bold text-sm leading-snug text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+            ATECMI
+          </p>
+          <p class="text-sm leading-snug text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+            Société par Actions Simplifiée (SAS) au capital de 400 000 €
+          </p>
+          <p class="text-sm leading-snug text-slate-700 md:text-base xl:text-lg 2xl:text-lg mt-2">
+            Siège social :
+          </p>
+          <p class="text-sm leading-snug text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+            5 Rue du Millénium
+          </p>
+          <p class="text-sm leading-snug text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+            Z.A.C. de la Croix Rouge
+          </p>
+          <p class="text-sm leading-snug text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+            59380 Socx – France
+          </p>
+        </div>
+        <div class="space-y-1">
+          <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+            Immatriculée au RCS de Dunkerque sous le numéro : 313 285 181
+          </p>
+          <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+            Numéro de TVA intracommunautaire : FR51 313 285 181
+          </p>
+        </div>
+        <div class="space-y-1">
+          <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+            Téléphone : 03 28 20 29 20
+          </p>
+          <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+            Email : contact@atecmi.com
+          </p>
+        </div>
+        <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          Directeur de la publication : [Nom et fonction du responsable]
+        </p>
+      </section>
 
-      <h3 class="text-slate-950 sousligne mt-5 mb-5 text-base font-semibold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">2. Hébergement</h3><br/>
-      Le site est hébergé par :<br>
-      [Nom de l’hébergeur]<br>
-      [Adresse]<br>
-      [Téléphone]<br>
-      [Site web]<br>
+      <section class="space-y-4">
+        <h2 class="text-slate-950 sousligne text-base font-semibold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">
+          Hébergement du site
+        </h2>
+        <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          Le site est hébergé par :
+        </p>
+        <div class="space-y-1">
+          <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+            OVHcloud
+          </p>
+          <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+            OVH SAS
+          </p>
+          <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+            2 rue Kellermann
+          </p>
+          <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+            59100 Roubaix – France
+          </p>
+        </div>
+        <div class="space-y-1">
+          <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+            RCS Lille Métropole 424 761 419 00045
+          </p>
+          <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+            Téléphone : 1007 (depuis la France)
+          </p>
+        </div>
+      </section>
 
-      <h3 class="text-slate-950 sousligne mt-5 mb-5 text-base font-semibold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">3. Accès au site (CGU)</h3><br/>
-      Le site est accessible gratuitement à tout utilisateur disposant d’un accès à Internet.
-      ATECMI met en œuvre tous les moyens raisonnables pour assurer un accès de qualité au site, sans être tenue à une obligation de résultat.
-      L’accès au site peut être interrompu à tout moment, notamment pour des raisons de maintenance, de mise à jour ou pour toute autre raison technique.
+      <section class="space-y-4">
+        <h2 class="text-slate-950 sousligne text-base font-semibold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">
+          Conditions Générales d’Utilisation (CGU)
+        </h2>
 
-      <br/><h3 class="text-slate-950 sousligne mt-5 mb-5 text-base font-semibold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">4. Utilisation du site (CGU)</h3><br/>
-      L’utilisateur s’engage à utiliser le site conformément aux lois et réglementations en vigueur.
-      Il est notamment interdit :
-      d’utiliser le site à des fins frauduleuses ou illégales 
-      de perturber le bon fonctionnement du site 
-      de tenter d’accéder de manière non autorisée aux systèmes 
-      ATECMI se réserve le droit de suspendre ou limiter l’accès au site en cas d’utilisation abusive.
+        <h3 class="text-sm font-semibold text-slate-900 md:text-base lg:text-lg xl:text-lg 2xl:text-xl">
+          3. Accès au site
+        </h3>
+        <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          Le site est accessible gratuitement à tout utilisateur disposant d’un accès à Internet.
+        </p>
+        <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          ATECMI met en œuvre tous les moyens raisonnables afin d’assurer un accès de qualité au site. Toutefois, la société ne saurait être tenue à une obligation de résultat.
+        </p>
+        <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          L’accès au site peut être interrompu temporairement pour des raisons de maintenance, de mise à jour ou pour toute autre contrainte technique.
+        </p>
 
-      <br/><h3 class="text-slate-950 sousligne mt-5 mb-5 text-base font-semibold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">5. Propriété intellectuelle</h3><br/>
-      L’ensemble des contenus présents sur le site (textes, images, logos, éléments graphiques, etc.) est protégé par le droit de la propriété intellectuelle.
-      Toute reproduction ou exploitation, totale ou partielle, sans autorisation préalable est strictement interdite.
+        <h3 class="text-sm font-semibold text-slate-900 md:text-base lg:text-lg xl:text-lg 2xl:text-xl">
+          4.Utilisation du site
+        </h3>
+        <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          L’utilisateur s’engage à utiliser le site conformément aux lois et réglementations en vigueur.
+        </p>
+        <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          Il est notamment interdit :
+        </p>
+        <ul class="list-disc space-y-2 pl-6 text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          <li>d’utiliser le site à des fins frauduleuses ou illicites ;</li>
+          <li>de perturber le bon fonctionnement du site ;</li>
+          <li>de tenter d’accéder de manière non autorisée aux systèmes ou données ;</li>
+          <li>d’introduire des virus ou tout autre dispositif malveillant.</li>
+        </ul>
+        <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          ATECMI se réserve le droit de suspendre ou limiter l’accès au site en cas d’utilisation abusive.
+        </p>
 
-      <br/><h3 class="text-slate-950 sousligne mt-5 mb-5 text-base font-semibold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">6. Responsabilité</h3><br/>
-      ATECMI s’efforce de fournir des informations fiables et à jour, mais ne garantit pas l’exactitude ou l’exhaustivité des contenus.
-      L’utilisateur reconnaît utiliser les informations du site sous sa responsabilité exclusive.
-      ATECMI ne pourra être tenue responsable :
-      des dommages directs ou indirects liés à l’utilisation du site 
-      d’éventuelles erreurs ou omissions 
-      d’une indisponibilité temporaire du site 
+        <h3 class="text-sm font-semibold text-slate-900 md:text-base lg:text-lg xl:text-lg 2xl:text-xl">
+          5. Propriété intellectuelle
+        </h3>
+        <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          L’ensemble des contenus présents sur le site (textes, images, photographies, illustrations, logos, vidéos, éléments graphiques, documents téléchargeables, etc.) est protégé par les dispositions du Code de la propriété intellectuelle.
+        </p>
+        <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          Sauf mention contraire, ces contenus sont la propriété exclusive d’ATECMI.
+        </p>
+        <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          Toute reproduction, représentation, diffusion, modification, adaptation ou exploitation, totale ou partielle, sans autorisation écrite préalable d’ATECMI is strictement interdite.
+        </p>
+        <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          Les contenus provenant de tiers font l’objet d’une autorisation d’utilisation ou mentionnent explicitement leur source conformément à la réglementation applicable.
+        </p>
 
-      <br/><h3 class="text-slate-950 sousligne mt-5 mb-5 text-base font-semibold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">7. Liens hypertextes</h3><br/>
-      Le site peut contenir des liens vers des sites externes.
-      ATECMI n’exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu ou leur politique de confidentialité.
+        <h3 class="text-sm font-semibold text-slate-900 md:text-base lg:text-lg xl:text-lg 2xl:text-xl">
+          6. Responsabilité
+        </h3>
+        <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          ATECMI s’efforce de fournir des informations fiables et régulièrement mises à jour. Toutefois, la société ne garantit ni l’exactitude, ni l’exhaustivité, ni l’actualité des informations diffusées sur le site.
+        </p>
+        <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          L’utilisateur reconnaît utiliser les informations disponibles sous sa responsabilité exclusive.
+        </p>
+        <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          ATECMI ne pourra être tenue responsable :
+        </p>
+        <ul class="list-disc space-y-2 pl-6 text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          <li>des dommages directs ou indirects liés à l’utilisation du site ;</li>
+          <li>des éventuelles erreurs ou omissions ;</li>
+          <li>d’une indisponibilité temporaire ou permanente du site.</li>
+        </ul>
 
-      <br/><h3 class="text-slate-950 sousligne mt-5 mb-5 text-base font-semibold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">8. Cookies</h3><br/>
-      Le site peut utiliser des cookies pour améliorer l’expérience utilisateur et réaliser des statistiques.
-      L’utilisateur peut configurer son navigateur pour refuser tout ou partie des cookies.
-
-      <br/><h3 class="text-slate-950 sousligne mt-5 mb-5 text-base font-semibold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">9. Sécurité</h3><br/>
-      ATECMI met en œuvre des mesures techniques et organisationnelles pour assurer la sécurité du site.
-      Cependant, aucun système n’étant totalement sécurisé, l’utilisateur reconnaît utiliser le site à ses propres risques.
-
-      <br/><h3 class="text-slate-950 sousligne mt-5 mb-5 text-base font-semibold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">10. Droit applicable</h3><br/>
-      Le présent site est soumis au droit français.
-      Tout litige relatif à son utilisation relève de la compétence des tribunaux du ressort du siège social d’ATECMI, sauf disposition légale contraire.
-
-      <br/><h3 class="text-slate-950 sousligne mt-5 mb-5 text-base font-semibold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">11. Modification des CGU</h3><br/>
-      ATECMI se réserve le droit de modifier à tout moment les présentes mentions légales et CGU.
-      Les utilisateurs sont invités à les consulter régulièrement.
-
-      <br/><h3 class="text-slate-950 sousligne mt-5 mb-5 text-base font-semibold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">12. Contact</h3><br/>
-      Pour toute question relative au site ou à son utilisation :
-      📧 contact@atecmi.com
-    </p>
+        <h3 class="text-sm font-semibold text-slate-900 md:text-base lg:text-lg xl:text-lg 2xl:text-xl">
+          7. Liens hypertextes
+        </h3>
+        <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          Le site peut contenir des liens vers des sites tiers.
+        </p>
+        <p class="text-sm leading-relaxed text-slate-700 md:text-base xl:text-lg 2xl:text-lg">
+          ATECMI n’exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu, leur disponibilité ou leurs politiques de confidentialité.
+        </p>
+      </section>
+    </article>
   </div>
 </section>
 {% endblock %}
-
