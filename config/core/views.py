@@ -84,3 +84,7 @@ def mentions_legales(request):
 
 def politique_confidentialite(request):
     return render(request, "core/politique_confidentialite.html")
+
+
+def rse(request):
+    return render(request, "core/rse.html")

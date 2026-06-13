@@ -1,9 +1,9 @@
-{% extends "base.html" %}
+{% extends "base.html" %} 
 {% load static %}
 
-{% block title %}Palettisation robotisée industrielle{% endblock %}
+{% block title %}Palettisation Industrielle Automatique | ATECMI{% endblock %}
 
-{% block meta_description %}Solutions de palettisation robotisée jusqu’à 5 000 colis/heure. Automatisation industrielle sur mesure pour l’agroalimentaire.{% endblock %}
+{% block meta_description %}Solutions de palettisation industrielle haute cadence pour colis, bouteilles, barquettes et produits conditionnés.{% endblock %}
 
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'css/solutions-common.css' %}">
@@ -15,7 +15,7 @@
     <img src="{% static 'images/palettisation/Photo_haut_page_Palettisation.JPG' %}" alt="Palettisation" class="hero-img">
     <div class="hero-content flex min-h-[105vh] flex-col justify-center py-16 text-white sm:min-h-[105vh] sm:py-20">
         <p class="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] font-semibold tracking-widest uppercase sm:text-xs md:text-sm"><span class="h-2 w-2 rounded-full bg-[#fabc60]"></span>Palettisation</p>
-        <h1 class="mt-5 max-w-[95vw] text-2xl font-semibold leading-[1.12] tracking-tight text-white sm:max-w-none sm:text-3xl md:text-4xl lg:text-[2.65rem] xl:text-5xl 2xl:text-6xl">Palettisation : <br/>Obtenez un meilleur rendement !</h1>
+        <h1 class="mt-5 max-w-[95vw] text-2xl font-semibold leading-[1.12] tracking-tight text-white sm:max-w-none sm:text-3xl md:text-4xl lg:text-[2.65rem] xl:text-5xl 2xl:text-6xl">Palettisation industrielle : <br/>Obtenez un meilleur rendement !</h1>
         <p class="mt-4 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg xl:text-xl 2xl:text-xl">Atecmi conçoit pour vous des solutions<br/> de palettisation sur-mesure, adaptées à vos<br/> besoins et vos cadences.</p>
     </div>
 </section>
@@ -52,11 +52,16 @@
         </div>
     </div>
 </section>
-
-<section class="features-video">
-    <video autoplay muted loop playsinline class="bg-video">
-        <source src="{% static 'video/accueil2.mp4' %}" type="video/mp4">
-    </video>
+<section class="features-video relative overflow-hidden w-full">
+    <iframe 
+        class="bg-video absolute inset-0 w-full h-full object-cover scale-105 !shadow-none"
+        src="https://www.youtube.com/embed/Ou7n9KL8_qY?autoplay=0&controls=1&rel=0&playsinline=1"  
+        title="Convoyage produit unitaire ATECMI" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+    </iframe>
 </section>
 
 <section class="features-cascade">

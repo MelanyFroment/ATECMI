@@ -14,4 +14,5 @@ urlpatterns = [
         views.politique_confidentialite,
         name="politique_confidentialite",
     ),
+    path("demarche-rse/", views.rse, name="rse"),
 ]
