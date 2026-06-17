@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 import dj_database_url
 import environ
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,19 +22,28 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 env = environ.Env(
     DJANGO_DEBUG=(bool, False),
     DATABASE_URL=(str, ""),
+    DATABASE_SSL_REQUIRE=(bool, False),
+    ALLOWED_HOSTS=(str, ".onrender.com,localhost,127.0.0.1"),
     DB_NAME=(str, ""),
     DB_USER=(str, ""),
     DB_PASSWORD=(str, ""),
     DB_HOST=(str, ""),
     DB_PORT=(str, "5432"),
+    EMAIL_BACKEND=(str, ""),
+    EMAIL_HOST=(str, "ssl0.ovh.net"),
+    EMAIL_PORT=(int, 587),
+    EMAIL_USE_TLS=(bool, True),
+    EMAIL_USE_SSL=(bool, False),
+    EMAIL_HOST_USER=(str, ""),
+    EMAIL_HOST_PASSWORD=(str, ""),
+    DEFAULT_FROM_EMAIL=(str, ""),
+    CONTACT_RECIPIENT_EMAIL=(str, "contact@atecmi.com"),
+    DJANGO_SECRET_KEY=(str, ""),
 )
 environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ktv_62d2#q22jt)2llosw4t*3*mwy+^!##b&3id@(d%_uq(z$l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 def _env_bool(value: str | None, default: bool = False) -> bool:
@@ -45,7 +55,26 @@ def _env_bool(value: str | None, default: bool = False) -> bool:
 IS_RENDER = os.getenv("RENDER") is not None
 DEBUG = _env_bool(os.getenv("DJANGO_DEBUG"), default=not IS_RENDER)
 
-ALLOWED_HOSTS = ["atecmi.onrender.com", "127.0.0.1","localhost"]
+# SECURITY WARNING: keep the secret key used in production secret!
+_DEV_SECRET_KEY = (
+    "django-insecure-ktv_62d2#q22jt)2llosw4t*3*mwy+^!##b&3id@(d%_uq(z$l"
+)
+SECRET_KEY = env("DJANGO_SECRET_KEY", default="").strip() or os.getenv(
+    "DJANGO_SECRET_KEY", ""
+).strip()
+if not SECRET_KEY:
+    if DEBUG:
+        SECRET_KEY = _DEV_SECRET_KEY
+    else:
+        raise ImproperlyConfigured(
+            "DJANGO_SECRET_KEY must be set in the environment when DEBUG is False."
+        )
+
+ALLOWED_HOSTS = [
+    host.strip()
+    for host in env("ALLOWED_HOSTS").split(",")
+    if host.strip()
+]
 
 # WhiteNoise static storage:
 # - in production: hashed + manifest (requires collectstatic)
@@ -101,35 +130,43 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application' 
 
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
+# Database — agnostique Neon (Render) / PostgreSQL OVH / SQLite local
+# Fournir DATABASE_URL (recommandé) ou les variables DB_* discrètes.
+# DATABASE_SSL_REQUIRE=True par défaut dès qu'une URL PostgreSQL distante est détectée.
 
 _database_url = env("DATABASE_URL", default="").strip() or os.getenv("DATABASE_URL", "").strip()
+
+if not _database_url:
+    _db_name = env("DB_NAME", default="").strip()
+    if _db_name:
+        _db_user = env("DB_USER", default="")
+        _db_password = env("DB_PASSWORD", default="")
+        _db_host = env("DB_HOST", default="")
+        _db_port = env("DB_PORT", default="5432")
+        _database_url = (
+            f"postgresql://{_db_user}:{_db_password}@{_db_host}:{_db_port}/{_db_name}"
+        )
+
+_database_ssl_require = _env_bool(
+    os.getenv("DATABASE_SSL_REQUIRE"),
+    default=bool(_database_url and _database_url.startswith("postgres")),
+)
+
 if _database_url:
     DATABASES = {
-        "default": dj_database_url.parse(_database_url, conn_max_age=600),
+        "default": dj_database_url.config(
+            default=_database_url,
+            conn_max_age=600,
+            ssl_require=_database_ssl_require,
+        )
     }
 else:
-    db_name = env("DB_NAME", default="").strip() or os.getenv("DB_NAME", "").strip()
-    if db_name:
-        DATABASES = {
-            "default": {
-                "ENGINE": "django.db.backends.postgresql",
-                "NAME": db_name,
-                "USER": env("DB_USER", default="") or os.getenv("DB_USER", ""),
-                "PASSWORD": env("DB_PASSWORD", default="") or os.getenv("DB_PASSWORD", ""),
-                "HOST": env("DB_HOST", default="") or os.getenv("DB_HOST", ""),
-                "PORT": env("DB_PORT", default="5432") or os.getenv("DB_PORT", "5432"),
-                "CONN_MAX_AGE": 600,
-            }
-        }
-    else:
-        DATABASES = {
-            "default": {
-                "ENGINE": "django.db.backends.sqlite3",
-                "NAME": BASE_DIR / "db.sqlite3",
-            }
-        }
+    DATABASES = {
+        "default": dj_database_url.config(
+            default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
+            conn_max_age=600,
+        )
+    }
 
 
 # Password validation
@@ -172,6 +209,39 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+# Images des actualités : Article.image → media/blog/
+# Uploads CKEditor 5 : media/django_ckeditor_5/
+
+# ---------------------------------------------------------------------------
+# E-mail — configuration flexible (local / Render / OVH)
+# ---------------------------------------------------------------------------
+# Local (DEBUG=True)     → console par défaut (e-mails visibles dans le terminal)
+# Render / prod          → SMTP si EMAIL_HOST_USER + EMAIL_HOST_PASSWORD sont définis
+# Bascule OVH jour J     → remplacer uniquement les variables d'environnement
+# ---------------------------------------------------------------------------
+
+EMAIL_HOST = env("EMAIL_HOST")
+EMAIL_PORT = env("EMAIL_PORT")
+# Booléens stricts depuis l'environnement (Yahoo: TLS/587 — OVH: SSL/465)
+EMAIL_USE_TLS = _env_bool(os.getenv("EMAIL_USE_TLS"), default=env("EMAIL_USE_TLS"))
+EMAIL_USE_SSL = _env_bool(os.getenv("EMAIL_USE_SSL"), default=env("EMAIL_USE_SSL"))
+EMAIL_HOST_USER = env("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
+DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL") or EMAIL_HOST_USER or "no-reply@atecmi.com"
+CONTACT_RECIPIENT_EMAIL = env("CONTACT_RECIPIENT_EMAIL")
+SERVER_EMAIL = DEFAULT_FROM_EMAIL
+
+_email_backend_override = env("EMAIL_BACKEND", default="").strip()
+_smtp_ready = bool(EMAIL_HOST_USER and EMAIL_HOST_PASSWORD)
+
+if _email_backend_override:
+    EMAIL_BACKEND = _email_backend_override
+elif DEBUG:
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+elif _smtp_ready:
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+else:
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 # CKEditor 5 (admin blog) + upload d’images dans le contenu
 CKEDITOR_5_CONFIGS = {
@@ -193,22 +263,6 @@ CKEDITOR_5_CONFIGS = {
         ],
     }
 }
-
-# Email (SMTP via env, console fallback if missing)
-EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
-
-if EMAIL_HOST_USER and EMAIL_HOST_PASSWORD:
-    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-    EMAIL_HOST = os.environ.get("EMAIL_HOST", "smtp.mail.yahoo.com")
-    EMAIL_PORT = 587
-    EMAIL_USE_TLS = True
-    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-else:
-    # Safe fallback (free hosts / local dev): never crash site due to missing SMTP creds.
-    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-    DEFAULT_FROM_EMAIL = "no-reply@localhost"
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

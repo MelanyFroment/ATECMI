@@ -1,73 +1,58 @@
+import logging
+
 from django.contrib import messages
-from django.core.mail import send_mail
+from django.core.exceptions import ImproperlyConfigured
 from django.shortcuts import redirect, render
 from django.urls import reverse
 
 from .forms import ContactForm
-from .models import ContactMessage
+from .services.contact import send_contact_notification
+from .services.contact_messages import save_contact_message
+
+logger = logging.getLogger(__name__)
+
+CONTACT_SUCCESS_MESSAGE = (
+    "Merci, votre demande a bien été envoyée. "
+    "Nous revenons vers vous sous 24–48h ouvrées."
+)
+CONTACT_SAVED_EMAIL_FAILED_MESSAGE = (
+    "Votre demande a bien été enregistrée, mais l’envoi de l’e-mail de notification "
+    "a échoué. Notre équipe sera informée via le backoffice."
+)
+CONTACT_INVALID_MESSAGE = (
+    "Certaines informations sont invalides. Merci de vérifier le formulaire."
+)
+
 
 def home(request):
     return render(request, "core/home.html")
 
+
 def about(request):
     return render(request, "core/about.html")
+
 
 def contact(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
             cleaned = form.cleaned_data
-            ContactMessage.objects.create(
-                name=cleaned.get("name", ""),
-                company=cleaned.get("company", ""),
-                email=cleaned.get("email", ""),
-                phone=cleaned.get("phone", ""),
-                message=cleaned.get("message", ""),
-                consent=bool(cleaned.get("consent")),
-                ip_address=request.META.get("REMOTE_ADDR"),
-                user_agent=(request.META.get("HTTP_USER_AGENT") or "")[:512],
-            )
-            subject = f"[ATECMI] Nouvelle demande de contact — {cleaned.get('company', '').strip() or cleaned.get('name', '')}"
-            message = "\n".join(
-                [
-                    "Nouvelle demande depuis le formulaire de contact ATECMI",
-                    "",
-                    f"Nom: {cleaned.get('name', '')}",
-                    f"Société: {cleaned.get('company', '')}",
-                    f"Email: {cleaned.get('email', '')}",
-                    f"Téléphone: {cleaned.get('phone', '')}",
-                    "",
-                    "Message:",
-                    f"{cleaned.get('message', '')}",
-                    "",
-                    f"Consentement: {'Oui' if cleaned.get('consent') else 'Non'}",
-                ]
-            )
+            save_contact_message(request, cleaned)
 
             try:
-                send_mail(
-                    subject=subject,
-                    message=message,
-                    from_email=None,  # uses DEFAULT_FROM_EMAIL
-                    recipient_list=["melany.from@yahoo.com"],
-                )
+                send_contact_notification(cleaned)
+            except ImproperlyConfigured:
+                logger.exception("Contact email misconfigured")
+                messages.warning(request, CONTACT_SAVED_EMAIL_FAILED_MESSAGE)
             except Exception:
-                messages.error(
-                    request,
-                    "Votre demande a bien été enregistrée, mais l’envoi email a échoué (configuration SMTP).",
-                )
-                return redirect(reverse("core:contact"))
+                logger.exception("Contact email delivery failed")
+                messages.warning(request, CONTACT_SAVED_EMAIL_FAILED_MESSAGE)
+            else:
+                messages.success(request, CONTACT_SUCCESS_MESSAGE)
 
-            messages.success(
-                request,
-                "Merci, votre demande a bien été envoyée. Nous revenons vers vous sous 24–48h ouvrées.",
-            )
             return redirect(reverse("core:contact"))
 
-        messages.error(
-            request,
-            "Certaines informations sont invalides. Merci de vérifier le formulaire.",
-        )
+        messages.error(request, CONTACT_INVALID_MESSAGE)
     else:
         form = ContactForm()
 

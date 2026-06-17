@@ -1,0 +1,49 @@
+import logging
+
+from django.conf import settings
+from django.core.mail import send_mail
+
+logger = logging.getLogger(__name__)
+
+
+def build_contact_email_subject(cleaned_data: dict) -> str:
+    company = (cleaned_data.get("company") or "").strip()
+    name = (cleaned_data.get("name") or "").strip()
+    label = company or name or "Contact"
+    return f"[ATECMI] Nouvelle demande de contact — {label}"
+
+
+def build_contact_email_body(cleaned_data: dict) -> str:
+    return "\n".join(
+        [
+            "Nouvelle demande depuis le formulaire de contact ATECMI",
+            "",
+            f"Nom: {cleaned_data.get('name', '')}",
+            f"Société: {cleaned_data.get('company', '')}",
+            f"Email: {cleaned_data.get('email', '')}",
+            f"Téléphone: {cleaned_data.get('phone', '')}",
+            "",
+            "Message:",
+            f"{cleaned_data.get('message', '')}",
+            "",
+            f"Consentement: {'Oui' if cleaned_data.get('consent') else 'Non'}",
+        ]
+    )
+
+
+def send_contact_notification(cleaned_data: dict) -> None:
+    """
+    Envoie la notification e-mail du formulaire de contact.
+    Lève une exception si l'envoi SMTP échoue (à intercepter dans la vue).
+    """
+    send_mail(
+        subject=build_contact_email_subject(cleaned_data),
+        message=build_contact_email_body(cleaned_data),
+        from_email=settings.DEFAULT_FROM_EMAIL,
+        recipient_list=[settings.CONTACT_RECIPIENT_EMAIL],
+        fail_silently=False,
+    )
+    logger.info(
+        "Contact notification sent to %s",
+        settings.CONTACT_RECIPIENT_EMAIL,
+    )
