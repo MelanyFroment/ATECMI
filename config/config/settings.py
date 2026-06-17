@@ -227,12 +227,24 @@ EMAIL_USE_TLS = _env_bool(os.getenv("EMAIL_USE_TLS"), default=env("EMAIL_USE_TLS
 EMAIL_USE_SSL = _env_bool(os.getenv("EMAIL_USE_SSL"), default=env("EMAIL_USE_SSL"))
 EMAIL_HOST_USER = env("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
-DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL") or EMAIL_HOST_USER or "no-reply@atecmi.com"
+
+_smtp_ready = bool(EMAIL_HOST_USER and EMAIL_HOST_PASSWORD)
+_explicit_from_email = env("DEFAULT_FROM_EMAIL", default="").strip()
+
+if _smtp_ready:
+    # Yahoo / OVH : l'expéditeur doit correspondre au compte SMTP authentifié
+    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+elif _explicit_from_email:
+    DEFAULT_FROM_EMAIL = _explicit_from_email
+elif EMAIL_HOST_USER:
+    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+else:
+    DEFAULT_FROM_EMAIL = "no-reply@localhost"
+
 CONTACT_RECIPIENT_EMAIL = env("CONTACT_RECIPIENT_EMAIL")
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
 _email_backend_override = env("EMAIL_BACKEND", default="").strip()
-_smtp_ready = bool(EMAIL_HOST_USER and EMAIL_HOST_PASSWORD)
 
 if _email_backend_override:
     EMAIL_BACKEND = _email_backend_override

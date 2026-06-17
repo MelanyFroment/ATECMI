@@ -1,9 +1,20 @@
 import logging
 
 from django.conf import settings
+from django.core.exceptions import ImproperlyConfigured
 from django.core.mail import send_mail
 
 logger = logging.getLogger(__name__)
+
+
+def resolve_from_email() -> str:
+    """
+    Retourne l'adresse expéditeur effective.
+    En SMTP, Yahoo/OVH exigent qu'elle soit identique à EMAIL_HOST_USER.
+    """
+    if settings.EMAIL_HOST_USER:
+        return settings.EMAIL_HOST_USER.strip()
+    return (settings.DEFAULT_FROM_EMAIL or "").strip()
 
 
 def build_contact_email_subject(cleaned_data: dict) -> str:
@@ -36,14 +47,21 @@ def send_contact_notification(cleaned_data: dict) -> None:
     Envoie la notification e-mail du formulaire de contact.
     Lève une exception si l'envoi SMTP échoue (à intercepter dans la vue).
     """
+    from_email = resolve_from_email()
+    if not from_email:
+        raise ImproperlyConfigured(
+            "Aucun expéditeur e-mail configuré (EMAIL_HOST_USER ou DEFAULT_FROM_EMAIL)."
+        )
+
     send_mail(
         subject=build_contact_email_subject(cleaned_data),
         message=build_contact_email_body(cleaned_data),
-        from_email=settings.DEFAULT_FROM_EMAIL,
+        from_email=from_email,
         recipient_list=[settings.CONTACT_RECIPIENT_EMAIL],
         fail_silently=False,
     )
     logger.info(
-        "Contact notification sent to %s",
+        "Contact notification sent from %s to %s",
+        from_email,
         settings.CONTACT_RECIPIENT_EMAIL,
     )
