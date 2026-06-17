@@ -39,6 +39,7 @@ env = environ.Env(
     DEFAULT_FROM_EMAIL=(str, ""),
     CONTACT_RECIPIENT_EMAIL=(str, "contact@atecmi.com"),
     DJANGO_SECRET_KEY=(str, ""),
+    EMAIL_DEBUG_CONSOLE=(bool, False),
 )
 environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
@@ -215,10 +216,16 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # ---------------------------------------------------------------------------
 # E-mail — configuration flexible (local / Render / OVH)
 # ---------------------------------------------------------------------------
-# Local (DEBUG=True)     → console par défaut (e-mails visibles dans le terminal)
-# Render / prod          → SMTP si EMAIL_HOST_USER + EMAIL_HOST_PASSWORD sont définis
-# Bascule OVH jour J     → remplacer uniquement les variables d'environnement
+# Local (DEBUG=True)              → console par défaut (e-mails dans le terminal)
+# Render / prod                   → SMTP si EMAIL_HOST_USER + PASSWORD définis
+# Tests Render sans SMTP (Yahoo)  → EMAIL_DEBUG_CONSOLE=True (logs Render)
+# Bascule OVH jour J              → remplacer uniquement les variables d'env
 # ---------------------------------------------------------------------------
+
+EMAIL_DEBUG_CONSOLE = _env_bool(
+    os.getenv("EMAIL_DEBUG_CONSOLE"),
+    default=env("EMAIL_DEBUG_CONSOLE"),
+)
 
 EMAIL_HOST = env("EMAIL_HOST")
 EMAIL_PORT = env("EMAIL_PORT")
@@ -248,6 +255,8 @@ _email_backend_override = env("EMAIL_BACKEND", default="").strip()
 
 if _email_backend_override:
     EMAIL_BACKEND = _email_backend_override
+elif EMAIL_DEBUG_CONSOLE:
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 elif DEBUG:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 elif _smtp_ready:
