@@ -1,6 +1,120 @@
 /**
- * ATECMI — Liste des articles (article_list.html)
- * Héros partagé avec legal.css (.hero-actualite)
+ * ATECMI — Actualités / blog
+ * Styles du contenu riche (CKEditor 5) sur le site public
  */
 
-/* Styles spécifiques blog : réservé aux extensions futures */
+.article-content.ck-content {
+  word-wrap: break-word;
+}
+
+.article-content.ck-content figure.image {
+  margin: 1.5rem auto;
+  max-width: 100%;
+}
+
+.article-content.ck-content figure.image img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+  border-radius: 0.75rem;
+}
+
+.article-content.ck-content figure.image.image-style-side {
+  float: right;
+  margin-left: 1.5rem;
+  max-width: 50%;
+}
+
+.article-content.ck-content figure.image.image-style-align-left {
+  float: left;
+  margin-right: 1.5rem;
+  max-width: 50%;
+}
+
+.article-content.ck-content figure.image.image-style-align-right {
+  float: right;
+  margin-left: 1.5rem;
+  max-width: 50%;
+}
+
+.article-content.ck-content figure.image.image-style-align-center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.article-content.ck-content table {
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: block;
+}
+
+.article-content.ck-content table td,
+.article-content.ck-content table th {
+  border: 1px solid #cbd5e1;
+  padding: 0.5rem 0.75rem;
+  vertical-align: top;
+}
+
+.article-content.ck-content table th {
+  background: #f8fafc;
+  font-weight: 600;
+}
+
+.article-content.ck-content mark {
+  padding: 0 0.15em;
+  border-radius: 0.15rem;
+}
+
+.article-content.ck-content u {
+  text-underline-offset: 3px;
+}
+
+.article-content.ck-content s {
+  text-decoration-thickness: 1px;
+}
+
+.article-content.ck-content .todo-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.article-content.ck-content .todo-list li {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.article-content.ck-content .text-tiny {
+  font-size: 0.7em;
+}
+
+.article-content.ck-content .text-small {
+  font-size: 0.85em;
+}
+
+.article-content.ck-content .text-big {
+  font-size: 1.4em;
+}
+
+.article-content.ck-content .text-huge {
+  font-size: 1.8em;
+}
+
+.article-content.ck-content::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 768px) {
+  .article-content.ck-content figure.image.image-style-side,
+  .article-content.ck-content figure.image.image-style-align-left,
+  .article-content.ck-content figure.image.image-style-align-right {
+    float: none;
+    margin-inline: auto;
+    max-width: 100%;
+  }
+}

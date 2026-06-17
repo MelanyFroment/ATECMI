@@ -264,25 +264,100 @@ elif _smtp_ready:
 else:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-# CKEditor 5 (admin blog) + upload d’images dans le contenu
+# CKEditor 5 — éditeur riche (admin blog) + upload d’images dans le contenu
 CKEDITOR_5_CONFIGS = {
     "default": {
-        "toolbar": [
-            "heading",
-            "|",
-            "bold",
-            "italic",
-            "link",
-            "bulletedList",
-            "numberedList",
-            "blockQuote",
-            "|",
-            "imageUpload",
-            "insertTable",
-            "undo",
-            "redo",
-        ],
-    }
+        "language": "fr",
+        "toolbar": {
+            "items": [
+                "heading",
+                "|",
+                "bold",
+                "italic",
+                "underline",
+                "strikethrough",
+                "highlight",
+                "subscript",
+                "superscript",
+                "|",
+                "fontSize",
+                "fontFamily",
+                "fontColor",
+                "fontBackgroundColor",
+                "|",
+                "bulletedList",
+                "numberedList",
+                "todoList",
+                "|",
+                "outdent",
+                "indent",
+                "alignment",
+                "|",
+                "link",
+                "blockQuote",
+                "imageUpload",
+                "insertTable",
+                "mediaEmbed",
+                "horizontalLine",
+                "|",
+                "undo",
+                "redo",
+                "|",
+                "removeFormat",
+                "sourceEditing",
+            ],
+            "shouldNotGroupWhenFull": True,
+        },
+        "heading": {
+            "options": [
+                {
+                    "model": "paragraph",
+                    "title": "Paragraphe",
+                    "class": "ck-heading_paragraph",
+                },
+                {
+                    "model": "heading1",
+                    "view": "h1",
+                    "title": "Titre 1",
+                    "class": "ck-heading_heading1",
+                },
+                {
+                    "model": "heading2",
+                    "view": "h2",
+                    "title": "Titre 2",
+                    "class": "ck-heading_heading2",
+                },
+                {
+                    "model": "heading3",
+                    "view": "h3",
+                    "title": "Titre 3",
+                    "class": "ck-heading_heading3",
+                },
+            ]
+        },
+        "image": {
+            "toolbar": [
+                "imageTextAlternative",
+                "|",
+                "imageStyle:alignLeft",
+                "imageStyle:alignCenter",
+                "imageStyle:alignRight",
+                "|",
+                "toggleImageCaption",
+                "imageResize",
+            ],
+            "styles": ["full", "alignLeft", "alignCenter", "alignRight"],
+        },
+        "table": {
+            "contentToolbar": [
+                "tableColumn",
+                "tableRow",
+                "mergeTableCells",
+                "tableProperties",
+                "tableCellProperties",
+            ],
+        },
+    },
 }
 
 # Default primary key field type
