@@ -36,10 +36,8 @@ env = environ.Env(
     EMAIL_USE_SSL=(bool, False),
     EMAIL_HOST_USER=(str, ""),
     EMAIL_HOST_PASSWORD=(str, ""),
-    DEFAULT_FROM_EMAIL=(str, ""),
     CONTACT_RECIPIENT_EMAIL=(str, "contact@atecmi.com"),
     DJANGO_SECRET_KEY=(str, ""),
-    EMAIL_DEBUG_CONSOLE=(bool, False),
 )
 environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
@@ -213,56 +211,25 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # Images des actualités : Article.image → media/blog/
 # Uploads CKEditor 5 : media/django_ckeditor_5/
 
-# ---------------------------------------------------------------------------
-# E-mail — configuration flexible (local / Render / OVH)
-# ---------------------------------------------------------------------------
-# Local (DEBUG=True)              → console par défaut (e-mails dans le terminal)
-# Render / prod                   → SMTP si EMAIL_HOST_USER + PASSWORD définis
-# Tests Render sans SMTP (Yahoo)  → EMAIL_DEBUG_CONSOLE=True (logs Render)
-# Bascule OVH jour J              → remplacer uniquement les variables d'env
-# ---------------------------------------------------------------------------
-
-EMAIL_DEBUG_CONSOLE = _env_bool(
-    os.getenv("EMAIL_DEBUG_CONSOLE"),
-    default=env("EMAIL_DEBUG_CONSOLE"),
-)
-
+# E-mail
 EMAIL_HOST = env("EMAIL_HOST")
 EMAIL_PORT = env("EMAIL_PORT")
-# Booléens stricts depuis l'environnement (Yahoo: TLS/587 — OVH: SSL/465)
 EMAIL_USE_TLS = _env_bool(os.getenv("EMAIL_USE_TLS"), default=env("EMAIL_USE_TLS"))
 EMAIL_USE_SSL = _env_bool(os.getenv("EMAIL_USE_SSL"), default=env("EMAIL_USE_SSL"))
 EMAIL_HOST_USER = env("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
-
-_smtp_ready = bool(EMAIL_HOST_USER and EMAIL_HOST_PASSWORD)
-_explicit_from_email = env("DEFAULT_FROM_EMAIL", default="").strip()
-
-if _smtp_ready:
-    # Yahoo / OVH : l'expéditeur doit correspondre au compte SMTP authentifié
-    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-elif _explicit_from_email:
-    DEFAULT_FROM_EMAIL = _explicit_from_email
-elif EMAIL_HOST_USER:
-    DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-else:
-    DEFAULT_FROM_EMAIL = "no-reply@localhost"
-
 CONTACT_RECIPIENT_EMAIL = env("CONTACT_RECIPIENT_EMAIL")
+
+SMTP_CONFIGURED = bool(EMAIL_HOST_USER and EMAIL_HOST_PASSWORD)
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER or "no-reply@localhost"
 SERVER_EMAIL = DEFAULT_FROM_EMAIL
 
-_email_backend_override = env("EMAIL_BACKEND", default="").strip()
-
-if _email_backend_override:
-    EMAIL_BACKEND = _email_backend_override
-elif EMAIL_DEBUG_CONSOLE:
+if env("EMAIL_BACKEND", default="").strip():
+    EMAIL_BACKEND = env("EMAIL_BACKEND").strip()
+elif DEBUG or not SMTP_CONFIGURED:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-elif DEBUG:
-    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
-elif _smtp_ready:
-    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 else:
-    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 # CKEditor 5 (admin blog) + upload d’images dans le contenu
 CKEDITOR_5_CONFIGS = {
