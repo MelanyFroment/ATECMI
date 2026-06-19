@@ -8,10 +8,6 @@ logger = logging.getLogger(__name__)
 
 
 def resolve_from_email() -> str:
-    """
-    Retourne l'adresse expéditeur effective.
-    En SMTP, Yahoo/OVH exigent qu'elle soit identique à EMAIL_HOST_USER.
-    """
     if settings.EMAIL_HOST_USER:
         return settings.EMAIL_HOST_USER.strip()
     return (settings.DEFAULT_FROM_EMAIL or "").strip()
@@ -43,10 +39,6 @@ def build_contact_email_body(cleaned_data: dict) -> str:
 
 
 def send_contact_notification(cleaned_data: dict) -> None:
-    """
-    Envoie la notification e-mail du formulaire de contact.
-    Lève une exception si l'envoi SMTP échoue (à intercepter dans la vue).
-    """
     from_email = resolve_from_email()
     if not from_email:
         raise ImproperlyConfigured(

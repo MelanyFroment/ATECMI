@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static blog_media %}
 
 {% block title %}{{ article.title }} - ATECMI{% endblock %}
 
@@ -52,7 +52,7 @@
                   [&_li]:leading-relaxed [&_li]:pl-1
                   [&_a]:font-semibold [&_a]:text-[#0E2643] [&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-[#0E2643]/60 [&_a]:transition hover:[&_a]:decoration-[#0E2643]
                   [&_blockquote]:my-8 [&_blockquote]:border-l-4 [&_blockquote]:border-slate-300 [&_blockquote]:pl-5 [&_blockquote]:italic [&_blockquote]:text-slate-700">
-        {{ article.content|safe }}
+        {{ article.content|fix_media_urls|safe }}
       </div>
 
       <footer class="mx-auto mt-14 max-w-3xl border-t border-slate-200 px-3 pt-10 sm:px-4">

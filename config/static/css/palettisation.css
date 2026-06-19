@@ -1,7 +1,3 @@
-/**
- * ATECMI — Palettisation (palettisation.html)
- */
-
 .features-palettisation {
     padding: 60px 90px;
 }
@@ -11,7 +7,6 @@
     text-align: justify;
 }
 
-/* ——— Mobile ——— */
 @media (max-width: 768px) {
     .features-palettisation {
         padding: 60px 40px;

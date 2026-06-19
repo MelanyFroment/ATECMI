@@ -1,7 +1,3 @@
-/**
- * ATECMI — Page d'accueil (home.html)
- */
-
 .features {
     padding: 50px 40px;
 }
@@ -247,7 +243,6 @@
     transform: scale(1.05);
 }
 
-/* ——— Tablette ——— */
 @media (max-width: 1024px) {
     .solutions-row {
         grid-template-columns: repeat(2, 1fr);
@@ -277,7 +272,6 @@
     }
 }
 
-/* ——— Mobile ——— */
 @media (max-width: 768px) {
     .solutions-row {
         grid-template-columns: 1fr;

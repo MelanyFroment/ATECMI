@@ -35,6 +35,5 @@ class ContactForm(forms.Form):
 
     def clean_message(self):
         value = self._clean_text(self.cleaned_data.get("message"))
-        # Keep line breaks for readability in email/admin display
         value = value.replace("\r\n", "\n").replace("\r", "\n")
         return value

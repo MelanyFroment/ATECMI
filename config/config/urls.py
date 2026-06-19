@@ -27,5 +27,5 @@ urlpatterns = [
     path("actualites/", include("blog.urls", namespace="blog")),
 ]
 
-if settings.DEBUG:
+if getattr(settings, "SERVE_MEDIA", settings.DEBUG):
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

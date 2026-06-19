@@ -1,7 +1,3 @@
-/**
- * ATECMI — Encartonnage (encartonnage.html)
- */
-
 .features-encartonnage {
     padding: 0 40px;
 }
@@ -29,7 +25,6 @@
     margin: 15px 0 0 0;
 }
 
-/* ——— Mobile ——— */
 @media (max-width: 768px) {
     .features-encartonnage,
     .features-encartonnage2 {

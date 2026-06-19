@@ -1,6 +1,6 @@
 (() => {
   const KEY = "atecmi_cookie_consent_v1";
-  const MAX_AGE_SECONDS = 60 * 60 * 24 * 183; // ~6 months (CNIL)
+  const MAX_AGE_SECONDS = 60 * 60 * 24 * 183;
   const COOKIE_PATH = "/";
 
   function qs(id) {
@@ -59,8 +59,6 @@
     if (accept) accept.addEventListener("click", () => applyConsent("accepted"));
     if (reject) reject.addEventListener("click", () => applyConsent("rejected"));
 
-    // Allow opening consent banner from footer link.
-    // If user clicks "manage cookies", we show banner again without changing prior choice.
     window.atecmiCookieConsent = window.atecmiCookieConsent || {};
     window.atecmiCookieConsent.open = () => showBanner();
     window.atecmiCookieConsent.reset = () => {
@@ -69,4 +67,3 @@
     };
   });
 })();
-

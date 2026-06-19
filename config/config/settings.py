@@ -40,6 +40,7 @@ env = environ.Env(
     CONTACT_RECIPIENT_EMAIL=(str, "contact@atecmi.com"),
     DJANGO_SECRET_KEY=(str, ""),
     EMAIL_DEBUG_CONSOLE=(bool, False),
+    SERVE_MEDIA=(bool, False),
 )
 environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
@@ -77,12 +78,8 @@ ALLOWED_HOSTS = [
     if host.strip()
 ]
 
-# WhiteNoise static storage:
-# - in production: hashed + manifest (requires collectstatic)
-# - in local dev: avoid manifest errors while editing templates/assets
 if not DEBUG:
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
 
 # Application definition
 
@@ -131,9 +128,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application' 
 
 
-# Database — agnostique Neon (Render) / PostgreSQL OVH / SQLite local
-# Fournir DATABASE_URL (recommandé) ou les variables DB_* discrètes.
-# DATABASE_SSL_REQUIRE=True par défaut dès qu'une URL PostgreSQL distante est détectée.
+# Database
 
 _database_url = env("DATABASE_URL", default="").strip() or os.getenv("DATABASE_URL", "").strip()
 
@@ -208,19 +203,33 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
-# Images des actualités : Article.image → media/blog/
-# Uploads CKEditor 5 : media/django_ckeditor_5/
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
 
-# ---------------------------------------------------------------------------
-# E-mail — configuration flexible (local / Render / OVH)
-# ---------------------------------------------------------------------------
-# Local (DEBUG=True)              → console par défaut (e-mails dans le terminal)
-# Render / prod                   → SMTP si EMAIL_HOST_USER + PASSWORD définis
-# Tests Render sans SMTP (Yahoo)  → EMAIL_DEBUG_CONSOLE=True (logs Render)
-# Bascule OVH jour J              → remplacer uniquement les variables d'env
-# ---------------------------------------------------------------------------
+SERVE_MEDIA = _env_bool(
+    os.getenv("SERVE_MEDIA"),
+    default=DEBUG or IS_RENDER,
+)
+
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+        "OPTIONS": {
+            "location": MEDIA_ROOT,
+            "base_url": MEDIA_URL,
+        },
+    },
+    "staticfiles": {
+        "BACKEND": (
+            "whitenoise.storage.CompressedManifestStaticFilesStorage"
+            if not DEBUG
+            else "django.contrib.staticfiles.storage.StaticFilesStorage"
+        ),
+    },
+}
+
+CKEDITOR_5_FILE_STORAGE = "blog.storage.CKEditor5Storage"
+CKEDITOR_5_FILE_UPLOAD_PERMISSION = "staff"
 
 EMAIL_DEBUG_CONSOLE = _env_bool(
     os.getenv("EMAIL_DEBUG_CONSOLE"),
@@ -229,7 +238,6 @@ EMAIL_DEBUG_CONSOLE = _env_bool(
 
 EMAIL_HOST = env("EMAIL_HOST")
 EMAIL_PORT = env("EMAIL_PORT")
-# Booléens stricts depuis l'environnement (Yahoo: TLS/587 — OVH: SSL/465)
 EMAIL_USE_TLS = _env_bool(os.getenv("EMAIL_USE_TLS"), default=env("EMAIL_USE_TLS"))
 EMAIL_USE_SSL = _env_bool(os.getenv("EMAIL_USE_SSL"), default=env("EMAIL_USE_SSL"))
 EMAIL_HOST_USER = env("EMAIL_HOST_USER")
@@ -239,7 +247,6 @@ _smtp_ready = bool(EMAIL_HOST_USER and EMAIL_HOST_PASSWORD)
 _explicit_from_email = env("DEFAULT_FROM_EMAIL", default="").strip()
 
 if _smtp_ready:
-    # Yahoo / OVH : l'expéditeur doit correspondre au compte SMTP authentifié
     DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 elif _explicit_from_email:
     DEFAULT_FROM_EMAIL = _explicit_from_email
@@ -264,7 +271,6 @@ elif _smtp_ready:
 else:
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-# CKEditor 5 — éditeur riche (admin blog) + upload d’images dans le contenu
 CKEDITOR_5_CONFIGS = {
     "default": {
         "language": "fr",
@@ -365,7 +371,6 @@ CKEDITOR_5_CONFIGS = {
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Security (enable in production)
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SESSION_COOKIE_SECURE = not DEBUG

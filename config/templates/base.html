@@ -11,8 +11,6 @@
     <title>{% block title %}ATECMI{% endblock %}</title>
     <meta name="description" content="{% block meta_description %}ATECMI conçoit et fabrique des solutions industrielles sur mesure pour le conditionnement agroalimentaire.{% endblock %}">
 
-    <!-- CSS -->
-    <!-- Tailwind via CDN (kept sync to avoid layout flash/CLS) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/components.css' %}">
@@ -44,7 +42,6 @@
       </div>
     </div>
 
-    <!-- JS -->
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/cookies.js' %}"></script>
     {% block scripts %}{% endblock %}

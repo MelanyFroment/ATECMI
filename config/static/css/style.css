@@ -1,8 +1,3 @@
-/**
- * ATECMI — Feuille globale
- * Variables, reset, typographie de base, navbar, footer, boutons communs.
- */
-
 :root {
     --color-brand-navy: #0f2745;
     --color-brand-navy-deep: #0e2643;
@@ -37,7 +32,6 @@ section {
     text-align: center;
 }
 
-/* ——— Boutons premium (hero, cookies, CTA globaux) ——— */
 .btn-industrial-outline {
     border: 1px solid rgba(255, 255, 255, 0.35);
     color: #fff;
@@ -108,7 +102,6 @@ section {
     margin-top: 2rem;
 }
 
-/* ——— NAVBAR ——— */
 .navbar {
     position: fixed;
     top: 0;
@@ -254,7 +247,6 @@ section {
     }
 }
 
-/* ——— FOOTER ——— */
 .footer {
     position: relative;
     background: #2f4a67;
@@ -313,7 +305,6 @@ a.linkedin i {
     height: auto;
 }
 
-/* ——— Media queries : navbar ——— */
 @media (max-width: 1024px) {
     .dropdown-menu {
         position: static;
@@ -490,7 +481,6 @@ a.linkedin i {
     }
 }
 
-/* ——— Media queries : footer ——— */
 @media (max-width: 966px) {
     .footer-content {
         flex-wrap: wrap;
