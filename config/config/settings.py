@@ -78,6 +78,15 @@ ALLOWED_HOSTS = [
     if host.strip()
 ]
 
+for _required_host in ("atecmi.onrender.com", ".onrender.com"):
+    if _required_host not in ALLOWED_HOSTS:
+        ALLOWED_HOSTS.append(_required_host)
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://atecmi.onrender.com",
+    "https://*.onrender.com",
+]
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -376,3 +385,26 @@ CSRF_COOKIE_SECURE = not DEBUG
 
 if not DEBUG:
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+
+# TEMPORAIRE — diagnostic Render : remonte les tracebacks 500 dans les logs.
+# À retirer une fois la cause identifiée.
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "ERROR",
+    },
+    "loggers": {
+        "django.request": {
+            "handlers": ["console"],
+            "level": "ERROR",
+            "propagate": False,
+        },
+    },
+}

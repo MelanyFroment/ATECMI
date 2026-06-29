@@ -20,8 +20,9 @@ venv/
 .DS_Store
 Thumbs.dbdir
 
-config/static/video/accueil2.mp4
 images download/
 
-# Vidéos médias lourdes : servies via /media/ (disque persistant Render ou CDN), hors historique Git
-config/media/videos/*.mp4
+# Vidéos : hébergées en externe (GitHub Releases / CDN), jamais versionnées dans Git
+*.mp4
+*.mov
+*.avi
