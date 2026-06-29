@@ -1,0 +1,78 @@
+.hero-actualite {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-actualite::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #fff6;
+    z-index: 1;
+}
+
+.hero-actualite-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mentions-legales {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 20vh;
+    overflow: hidden;
+}
+
+.mentions-legales-content strong {
+    position: relative;
+    display: inline-block;
+    background-image: linear-gradient(to right, #f2c94c 100%, transparent 0);
+    background-repeat: no-repeat;
+    background-size: 100% 4px;
+    background-position: 0 100%;
+    box-decoration-break: clone;
+    padding: 5px;
+}
+
+@media (max-width: 1024px) {
+    .hero-actualite-buttons {
+        gap: 15px;
+    }
+
+    .hero-actualite-buttons button {
+        font-size: 0.95rem;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-actualite-content {
+        padding: 0 20px;
+    }
+
+    .hero-actualite-buttons {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .hero-actualite-buttons button {
+        width: 100%;
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .hero-actualite-buttons button {
+        font-size: 0.8rem;
+        padding: 16px 30px;
+    }
+}

@@ -9,8 +9,8 @@
 
 {% block content %}
 <section class="hero-convoyage_produit relative overflow-hidden bg-slate-950">
-    <video autoplay muted loop playsinline class="absolute inset-0 h-full w-full object-cover opacity-90">
-        <source src="{% static 'video/accueil2.mp4' %}" type="video/mp4">
+    <video autoplay muted loop playsinline preload="metadata" poster="{% static 'images/accueil/image1.png' %}" class="absolute inset-0 h-full w-full object-cover opacity-90">
+        <source src="https://github.com/MelanyFroment/ATECMI/releases/download/preprod/accueil2.mp4" type="video/mp4">
     </video>
     <div class="absolute inset-0 from-slate-950/85 via-slate-950/50 to-transparent"></div>
     <div class="relative text-white hero-content flex min-h-[105vh] flex-col justify-center py-16 text-white sm:min-h-[105vh] sm:py-20">

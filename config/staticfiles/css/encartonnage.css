@@ -1,0 +1,33 @@
+.features-encartonnage {
+    padding: 0 40px;
+}
+
+.features-encartonnage h2 {
+    text-align: left;
+}
+
+.features-encartonnage p {
+    line-height: 1.7;
+    margin: 15px 0 0 0;
+}
+
+.features-encartonnage2 {
+    padding: 40px 40px;
+}
+
+.features-encartonnage2 h2 {
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.features-encartonnage2 p {
+    line-height: 1.7;
+    margin: 15px 0 0 0;
+}
+
+@media (max-width: 768px) {
+    .features-encartonnage,
+    .features-encartonnage2 {
+        padding: 40px 24px;
+    }
+}
