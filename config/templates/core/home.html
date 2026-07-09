@@ -9,9 +9,22 @@
 
 {% block content %}
 <section class="hero-convoyage_produit relative overflow-hidden bg-slate-950">
-    <video autoplay muted loop playsinline preload="metadata" poster="{% static 'images/accueil/image1.png' %}" class="absolute inset-0 h-full w-full object-cover opacity-90">
+    <!-- <video autoplay muted loop playsinline preload="metadata" poster="{% static 'images/accueil/image1.png' %}" class="absolute inset-0 h-full w-full object-cover opacity-90">
         <source src="https://github.com/MelanyFroment/ATECMI/releases/download/preprod/accueil2.mp4" type="video/mp4">
-    </video>
+    </video> -->
+    <div class="absolute inset-0 h-full w-full overflow-hidden opacity-90">
+        <iframe 
+            id="youtube-player"
+            class="absolute video-background"
+            src="https://www.youtube.com/embed/3K1BVSdQ35Q?controls=0&autoplay=1&mute=1&loop=1&playlist=3K1BVSdQ35Q&disablekb=1&fs=0&rel=0&iv_load_policy=3&enablejsapi=1"
+            title="ATECMI Accueil Video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            style="border: none; width: 140vw; height: 140vh; min-width: 140%; min-height: 140%; left: 50%; top: 50%; transform: translate(-50%, -50%); aspect-ratio: 16/9; object-fit: cover;">
+         </iframe>
+    </div>
     <div class="absolute inset-0 from-slate-950/85 via-slate-950/50 to-transparent"></div>
     <div class="relative text-white hero-content flex min-h-[105vh] flex-col justify-center py-16 text-white sm:min-h-[105vh] sm:py-20">
         <h1 class="max-w-[95vw] text-2xl font-semibold leading-[1.12] tracking-tight text-white sm:max-w-none sm:text-3xl md:text-4xl lg:text-[2.65rem] lg:leading-[1.08] xl:text-5xl 2xl:text-6xl">Concepteur et<br/> constructeur de<br/> vos solutions sur mesure</h1>

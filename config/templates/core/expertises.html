@@ -10,7 +10,7 @@
 
 {% block content %}
 <section class="hero-section relative overflow-hidden bg-slate-950">
-  <img class="absolute inset-0 h-full w-full object-cover opacity-90" src="{% static 'images/accueil/Photo_integration.JPG' %}" alt="">
+  <img class="absolute inset-0 h-full w-full object-cover opacity-90" src="{% static 'images/accueil/Photo_integration.JPG' %}" alt="" aria-hidden="true">
   <div class="absolute inset-0 from-slate-950/85 via-slate-950/50 to-transparent"></div>
   <div class="hero-content flex min-h-[105vh] flex-col items-center justify-center py-16 text-white sm:min-h-[105vh] sm:py-20">
     <h1 class="max-w-[min(100%,42rem)] text-center text-2xl font-semibold leading-[1.12] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-[2.65rem] xl:text-5xl 2xl:text-6xl">Nos expertises</h1>
@@ -20,7 +20,7 @@
 </div>
 </section>
 
-<section id="contenu" class="mx-auto px-8 py-14 text-base leading-relaxed text-slate-800 xl:text-lg 2xl:text-lg">
+<section id="contenu" class="py-[60px] px-[90px] mx-auto text-base leading-relaxed text-slate-800 xl:text-lg 2xl:text-lg">
   <h2 class="mb-5 mt-5 text-center text-xl font-semibold leading-snug tracking-tight md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-4xl">Une maîtrise globale de <strong>vos projets industriels</strong></h2>
   <p class="mb-4">
     <strong>ATECMI</strong> met à votre disposition une expertise complète en <strong>ingénierie industrielle</strong>, en <strong>transitique</strong> et en <strong>automatisation</strong>, afin de concevoir et intégrer des solutions sur mesure adaptées à vos lignes de production.
@@ -48,14 +48,14 @@
       </p>
     </div>
     <div class="flex-1">
-      <img src="{% static 'images/accueil/modelisation_depalettisation.png' %}" alt="Schéma d'implantation industrielle pour étude et optimisation des flux de production">
+      <img src="{% static 'images/expertise/implantation.png' %}" alt="Plan d'implantation industrielle et optimisation des flux de production ATECMI" loading="lazy" decoding="async">
     </div> 
   </div>
 
   <h2 id="conception" class="mb-8 scroll-mt-28 text-center text-lg font-bold leading-snug text-white md:mb-10 md:scroll-mt-32 md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">Conception - Bureau d’étude mécanique</h2>
   <div class="col-sep-2 flex flex-col md:flex-row gap-8 items-center">
     <div class="flex-1">
-      <img src="{% static 'images/accueil/modelisation_depalettisation.png' %}" alt="Modélisation 3D d'équipement sur mesure par le bureau d'études mécanique ATECMI">
+      <img src="{% static 'images/expertise/Conception-BE.png' %}" alt="Modélisation 3D d'une machine industrielle sur mesure — bureau d'études mécanique ATECMI" loading="lazy" decoding="async">
     </div> 
     <div class="flex-1">
       <h3 class="sousligne mb-5 mt-5 text-base font-bold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">Des solutions sur mesure adaptées à vos contraintes</h3>
@@ -88,14 +88,14 @@
       </p>
     </div>
     <div class="flex-1">
-      <img src="{% static 'images/accueil/modelisation_depalettisation.png' %}" alt="Automate industriel et pilotage automatisé d'une ligne de production">
+      <img src="{% static 'images/expertise/programmation.png' %}" alt="Programmation automate et pilotage système d'une ligne de production industrielle" loading="lazy" decoding="async">
     </div> 
   </div>
 
   <h2 id="sav" class="mb-8 scroll-mt-28 text-center text-lg font-bold leading-snug text-white md:mb-10 md:scroll-mt-32 md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">Suivi technique et SAV</h2>
   <div class="col-sep-2 flex flex-col md:flex-row gap-8 items-center">
     <div class="flex-1">
-      <img src="{% static 'images/accueil/modelisation_depalettisation.png' %}" alt="Maintenance et suivi technique d'équipements de conditionnement industriel">
+      <img src="{% static 'images/expertise/SAV.png' %}" alt="Suivi technique et service après-vente sur équipements de conditionnement industriel ATECMI" loading="lazy" decoding="async">
     </div> 
     <div class="flex-1">
       <h3 class="sousligne mb-5 mt-5 text-base font-bold md:text-lg lg:text-xl xl:text-xl 2xl:text-2xl">Un accompagnement durable de vos installations</h3>

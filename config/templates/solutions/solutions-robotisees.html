@@ -47,11 +47,21 @@
     </div>
 </section>
 
-<section class="features-video">
-    <video autoplay muted loop playsinline preload="metadata" poster="{% static 'images/accueil/image1.png' %}" class="bg-video">
-        <source src="https://github.com/MelanyFroment/ATECMI/releases/download/preprod/accueil2.mp4" type="video/mp4">
-    </video>
+<section class="features-video w-full px-2 sm:px-4 my-2">
+    <div class="relative w-full max-w-7xl mx-auto h-64 sm:h-80 md:h-[500px] overflow-hidden rounded-lg">
+        <iframe 
+            class="absolute top-1/2 left-1/2 w-full h-[90%] -translate-x-1/2 -translate-y-1/2 object-cover"
+            src="https://www.youtube.com/embed/4nAqedqoy_Y?controls=0&autoplay=1&mute=1&loop=1&playlist=4nAqedqoy_Y"  
+            title="Integration ATECMI" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen> 
+        </iframe>
+    </div>
 </section>
+
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/4nAqedqoy_Y?si=ia_U021vDv5sWQq9&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> -->
 
 <section class="features-cascade">
     <div class="cascade-row">
